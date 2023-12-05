@@ -16,9 +16,9 @@ consulter à tout moment l’état des salles.
 ### Architecture MVC 
 Pour la réalisation de ce projet avec mon camarade, nous avons utilisé la méthode MVC qui permet de structurer de la façon la plus conventionnel possible notre projet.
 
-* Model → Contient les script Permet la liaison entre la site et la BDD
+* Model → Contient les script qui permettent la liaison vers la BDD
 * View → Permet de gérer tout la partie Front *(Affichage du site web)*
-* Controller → Comme son nom l'indique controle / vérifier que les *datas* entrées peuvent correctement être exploitées
+* Controller → Comme son nom l'indique controle / vérifier que les *données* entrées peuvent correctement être exploitées
 
 __source :__
 * [MVC en 5min](https://www.youtube.com/watch?v=gs-61l4Z32M&pp=ygUDTVZD)
