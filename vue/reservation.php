@@ -22,41 +22,38 @@
     <h1>Page de reservation</h1>
     
     <div id="center">
-        <!-- Liste d'utilisateur dynamique -->
-        <select name="">
-            <option>client 1</option>
-            <option>client 2</option>
-            <option>client 3</option>
-            <option>client 4</option>
-            <option>client 5</option>
-        </select>
+        <div>
+            <!-- Boutton pour actualiser les réservation du client choisi -->
+            <form action="" method="post">
+                <!-- Liste d'utilisateur dynamique -->
+                <select name="listClient" multiple size="10">
+                    <?php include __DIR__ . '/../controller/liste_user.php';?>
+                </select><br>
+
+                <input type="submit" value="rechercher 🔎 " style="width: 130px">
+            </form>
+        </div>
 
         <!-- tableau dynamique -->
-        <table>
+        <table name="listReservation">
             <thead>
                 <tr>
-                    <th colspan="4">
+                    <th colspan="5">
                         Liste reservations
                     </th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td>
-                        nom de la reservation
-                    </td>
-                    <td>
-                        <button>ajouter</button>
-                    </td>
-                    <td>
-                        <button>provisoire</button>
-                    </td>
-                    <td>
-                        <button>supprimer</button>
-                    </td>
-                </tr>
+                
             </tbody>
         </table>
+
+        <div>
+            <!-- A faire ... -->  
+            <button style="width: 40px; height: 40px"> + </button><br>
+            <button style="width: 40px; height: 40px"> - </button>
+        </div>
     </div>
+    
 </body>
 </html>

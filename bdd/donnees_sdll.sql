@@ -8,13 +8,6 @@ INSERT INTO `categorie_salle` (`id`, `libelle`) VALUES
 (2, "avec équipements"),
 (3, "Amphi");
 
-
-INSERT INTO `reservation` (`id`, `utilisateur_id`, `salle_id`, `date`, `periode`) VALUES
-(1, 2, 6, "2023-06-06 00:00:00", 1),
-(2, 6, 5, "2023-06-09 00:00:00", 2),
-(3, 6, 10, "2023-06-09 00:00:00", 3),
-(4, 7, 4, "2023-06-07 00:00:00", 2);
-
 INSERT INTO `salle` (`id`, `salle_nom`, `categorie`) VALUES
 (1, "Daum", 1),
 (2, "Corbin", 1),
@@ -50,3 +43,11 @@ INSERT INTO `utilisateur` (`utilisateur_id`, `nom`, `prenom`, `structure_id`, `s
 (7, "LIEVIN", "NATHAN", 3, "FFT- COMITE DEPARTEMENTAL DE TENNIS DE MOSELLE ", "42 rue de la commanderie 54840 Sexey les bois", "lievinn@fft.fr");
 COMMIT;
 
+INSERT INTO etat 
+VALUES (1, "Valide"), (2, "Provisoire"), (3, "Annule");
+
+INSERT INTO `reservation` (`id`, `utilisateur_id`, `salle_id`, `date`, `periode`) VALUES
+(1, 2, 6, "2023-06-06 00:00:00", 1),
+(2, 6, 5, "2023-06-09 00:00:00", 2),
+(3, 6, 10, "2023-06-09 00:00:00", 3),
+(4, 7, 4, "2023-06-07 00:00:00", 2);
