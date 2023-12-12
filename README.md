@@ -24,7 +24,8 @@ __source :__
 * [MVC en 5min](https://www.youtube.com/watch?v=gs-61l4Z32M&pp=ygUDTVZD)
 * [MVC plus détailler](https://www.youtube.com/watch?v=HxhwAc7zzgE&pp=ygUDTVZD)
 
-### Repartition du travail
+---
+### Repartition du travail (Cahier des Charges)
 __Partie Administration (Tduki) :__
 * Gérer les accès : ajouter, supprimer, modifier l’accès pour une personne (Administrateur,
 secrétariat...)
@@ -38,8 +39,13 @@ __Partie Réservation (Medhi) :__
 « Annulé »)
 * Consulter les salles disponibles.
 * Générer le fichier xml des réservations validées d’une semaine.
+---
 
 ### Base de projet
-Durant la construction de Valres2 nous avons put prendre certaine initative tel que :
-* la modification de la Base de donnée, qui nous a permit de mieux optimiser et surtout répondre au besoin de gestion des droits ainsi que pour vérifier l'etat d'une reservation.
+Durant la construction de **Valres2** nous avons put prendre certaine initative tel que :
+* la modification de la Base de donnée, qui nous a permit de mieux optimiser et surtout répondre au besoin
+de gestion des droits ainsi que pour vérifier l'etat d'une reservation.
+
 ![image EA](image/EA.png)
+
+Pour la réalisation de ce projet nous avons aussi mit en place des mesures tel que.

@@ -3,34 +3,36 @@
 include __DIR__ . '/../model/reserv.inc.php';
 
 $i = 1;
-while($row_user != false){
-    $nom = $row_user["nom"];
-    $prenom = $row_user["prenom"];
+while($row_reserv != false){
+    $nom_salle = $row_reserv["salle_nom"];
+    $categorie = $row_reserv["categorie"];
+    $etat = $row_reserv["etat"];
+    $Longdate = new DateTime($row_reserv["date"]);
+    $date = $Longdate->format('d-m-Y');
 
     // Affichage des utilisateurs
-    echo "<option value='".$i."'>".strtolower($nom)." ".strtolower($prenom)."</option>";
-    $row_user = $connect_user->fetch();
+    echo "
+    <tr>
+        <td>".$nom_salle."</td>
+        <td>".$categorie."</td>
+        <td>".$etat."</td>
+        <td>".$date."</td>
+        <td>
+            <button>ajouter</button>
+        </td>
+        <td>
+            <button>provisoire</button>
+        </td>
+        <td>
+            <button>refuser</button>
+        </td>
+        <td>
+            <input type='checkbox' name='delcheck'>
+        </td>
+    </tr>
+    ";
+    $row_reserv = $connect_reserv->fetch();
     $i++;
 }
-
-// <tr>
-//                     <td>
-//                         salle_nom date(D/M/Y) 
-//                     </td>
-//                     <td>
-//                         <form action="" method="post">
-//                             <input type="submit" value="ajouter">
-//                         </form>
-//                     </td>
-//                     <td>
-//                         <button>provisoire</button>
-//                     </td>
-//                     <td>
-//                         <button>refuser</button>
-//                     </td>
-//                     <td>
-//                         <input type="checkbox" name="delcheck">
-//                     </td>
-//                 </tr>
 
 ?>
