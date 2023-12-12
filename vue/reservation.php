@@ -30,7 +30,7 @@
                     <?php include __DIR__ . '/../controller/liste_user.php';?>
                 </select><br>
 
-                <input type="submit" value="rechercher 🔎 " style="width: 130px">
+                <input type="submit" value="rechercher" style="width: 130px">
             </form>
         </div>
 

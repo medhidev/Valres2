@@ -40,4 +40,6 @@ __Partie Réservation (Medhi) :__
 * Générer le fichier xml des réservations validées d’une semaine.
 
 ### Base de projet
-* Interface basé sur la structure du projet de Tduki en stage → [image](https://media.discordapp.net/attachments/1063192422907138138/1174631522502967336/image.png?ex=65684bda&is=6555d6da&hm=c79b93343463558d07d9b8ae99f4539c96d6b31ec2d031ff9c74618a76a312fd&=&width=1042&height=662)
+Durant la construction de Valres2 nous avons put prendre certaine initative tel que :
+* la modification de la Base de donnée, qui nous a permit de mieux optimiser et surtout répondre au besoin de gestion des droits ainsi que pour vérifier l'etat d'une reservation.
+![image EA](image/EA.png)
