@@ -1,6 +1,6 @@
 <?php
 
-include __DIR__ . '/../model/user.inc.php';
+include '../model/user.inc.php';
 
 $i = 1;
 while($row_user != false){

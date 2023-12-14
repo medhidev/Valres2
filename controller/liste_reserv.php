@@ -1,6 +1,6 @@
 <?php
 
-include __DIR__ . '/../model/reserv.inc.php';
+ include '../model/reserv.inc.php';
 
 $i = 1;
 while($row_reserv != false){
@@ -18,13 +18,19 @@ while($row_reserv != false){
         <td>".$etat."</td>
         <td>".$date."</td>
         <td>
-            <button>ajouter</button>
+            <form action='model/etat/valide.inc.php' method='post'>
+                <input type='submit' value='valide'>
+            </form>
         </td>
         <td>
-            <button>provisoire</button>
+            <form action='model/etat/provisoire.inc.php' method='post'>
+                <input type='submit' value='provisoire'>
+            </form>
         </td>
         <td>
-            <button>refuser</button>
+            <form action='model/etat/annule.inc.php' method='post'>
+                <input type='submit' value='annule'>
+            </form>
         </td>
         <td>
             <input type='checkbox' name='delcheck'>
@@ -32,6 +38,7 @@ while($row_reserv != false){
     </tr>
     ";
     $row_reserv = $connect_reserv->fetch();
+
     $i++;
 }
 

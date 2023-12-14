@@ -30,15 +30,15 @@
     <div id="center">
         <div>
             <!-- Boutton pour actualiser les réservation du client choisi -->
-            <form action="" method="post">
+            <form action="../controller/search_reserv.php" method="post">
                 <!-- Liste d'utilisateur dynamique -->
                 <select name="listClient" multiple size="10">
-                    <?php include __DIR__ . '/../controller/liste_user.php';?>
+                    <?php include '../controller/liste_user.php';?>
                 </select><br>
 
                 <input type="submit" value="rechercher" style="width: 130px">
             </form>
-        </div>
+        </div><br>
 
         <!-- tableau dynamique -->
         <table name="listReservation" style="background: grey; padding: 5px">
@@ -66,8 +66,7 @@
                         </td>
                     </div>
                 </tr>
-
-                <?php include __DIR__ . '/../controller/liste_reserv.php';?>
+                <?php include '../controller/liste_reserv.php';?>
             </tbody>
         </table>
 
@@ -76,6 +75,12 @@
             <input type="button" style="width: 40px; height: 40px; background-color: #40ff73; border: 0" onclick="test()" value=" + "><br><br>
             <input type="button" style="width: 40px; height: 40px; background-color: #e60036; border: 0" onclick="test()" value=" - ">
         </div>
+
+        <?php
+        echo $_SESSION["id_utilisateur"]."<br><br><br><br>"; 
+        ?>
+
+        <a href="form_reserv.php">lien vers le formulaire</a>
     </div>
     <script>
         function test(){
