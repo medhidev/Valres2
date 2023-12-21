@@ -75,11 +75,7 @@
             <input type="button" style="width: 40px; height: 40px; background-color: #40ff73; border: 0" onclick="test()" value=" + "><br><br>
             <input type="button" style="width: 40px; height: 40px; background-color: #e60036; border: 0" onclick="test()" value=" - ">
         </div>
-
-        <?php
-        echo $_SESSION["id_utilisateur"]."<br><br><br><br>"; 
-        ?>
-
+        
         <a href="form_reserv.php">lien vers le formulaire</a>
     </div>
     <script>

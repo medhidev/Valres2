@@ -1,16 +1,8 @@
 <?php
-
 session_start();
+include '../model/reserv_user.inc.php';
 
-$_SESSION["id_utilisateur"] = 0;
-
-// vérifie que l'utilisateur est valide
-$_SESSION["id_utilisateur"] = $_POST["listClient"];
-echo $_POST["listClient"];
-
-include '../model/reserv.inc.php';
-
-header('Location: ../vue/reservation.php');
-exit
+// var_dump($_POST["listClient"]);
+$_SESSION['id'] = $_POST["listClient"];
 
 ?>
