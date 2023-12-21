@@ -1,5 +1,4 @@
 <?php
-
 include '../model/user.inc.php';
 
 $i = 1;

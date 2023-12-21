@@ -23,6 +23,20 @@
         padding-right: 20px;
         background-color: #e6e1e1;
     }
+
+    #add_reserv{
+        width: 40px;
+        height: 40px;
+        background-color: #40ff73;
+        border: 0;
+    }
+
+    #del_reserv{
+        width: 40px; 
+        height: 40px;
+        background-color: #e60036;
+        border: 0;
+    }
 </style>
 <body>
     <h1>Page de reservation</h1>
@@ -30,7 +44,7 @@
     <div id="center">
         <div>
             <!-- Boutton pour actualiser les réservation du client choisi -->
-            <form action="../controller/search_reserv.php" method="post">
+            <form action="reservation.php" method="post">
                 <!-- Liste d'utilisateur dynamique -->
                 <select name="listClient" multiple size="10">
                     <?php include '../controller/liste_user.php';?>
@@ -71,9 +85,10 @@
         </table>
 
         <div style="padding: 30px">
-            <!-- A faire ... --> 
-            <input type="button" style="width: 40px; height: 40px; background-color: #40ff73; border: 0" onclick="test()" value=" + "><br><br>
-            <input type="button" style="width: 40px; height: 40px; background-color: #e60036; border: 0" onclick="test()" value=" - ">
+            <!-- A faire ... -->
+
+            <input type="button" id="add_reserv" onclick="test()" value=" + "><br><br>
+            <input type="button" id="del_reserv" onclick="test()" value=" - ">
         </div>
         
         <a href="form_reserv.php">lien vers le formulaire</a>
