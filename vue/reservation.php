@@ -40,16 +40,18 @@
 </style>
 <body>
     <h1>Page de reservation</h1>
+    <a href="#">lien vers la liste des salles</a>
     
     <div id="center">
         <div>
-            <!-- Boutton pour actualiser les réservation du client choisi -->
             <form action="reservation.php" method="post">
+
                 <!-- Liste d'utilisateur dynamique -->
                 <select name="listClient" multiple size="10">
                     <?php include '../controller/liste_user.php';?>
                 </select><br>
 
+                <!-- Rechercher les reservations de l'utilisateur -->
                 <input type="submit" value="rechercher" style="width: 130px">
             </form>
         </div><br>
@@ -85,19 +87,17 @@
         </table>
 
         <div style="padding: 30px">
-            <!-- A faire ... -->
-
-            <input type="button" id="add_reserv" onclick="test()" value=" + "><br><br>
-            <input type="button" id="del_reserv" onclick="test()" value=" - ">
+            <!-- Ajouter une reservation -->
+            <form action="ajouter.php" method="post">
+                <input type="submit" id="add_reserv" value=" + "><br><br>
+            </form>
+            
+            <!-- Supprimer une reservation -->
+            <form action="supprimer.php" method="post">
+                <input type="button" id="del_reserv" value=" - "><br><br>
+            </form>
         </div>
-        
-        <a href="form_reserv.php">lien vers le formulaire</a>
     </div>
-    <script>
-        function test(){
-            alert('test');
-        }
-    </script>
 
 </body>
 </html>
