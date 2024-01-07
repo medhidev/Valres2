@@ -4,11 +4,9 @@ if ($_SERVER["SCRIPT_FILENAME"] == __FILE__) {
     $racine = "..";
 }
 
+// temporaire !!!
 session_start();
-$_SESSION['utilisateur'] = 'Medhi Grimal'; // Déconnecte l'utilisateur
-// $_SESSION['permission'] = null; // Pour la gestion des droits
-$_SESSION['permission'] = 'utilisateur'; // Pour la gestion des droits
-$_SESSION["structure"] = 'Fives Nordon';
+$_SESSION['id'] = 8;
 
 /* Model Login / Connexion */
 include "$racine/model/bdd.inc.php";

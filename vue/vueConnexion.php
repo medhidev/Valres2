@@ -28,7 +28,8 @@
 
 </style>
 <body>
-    <?= "<strong>login</strong>: ".$_SESSION["utilisateur"]; ?>
+    <!-- Mettre le Nom de l'utilisateur ! -->
+    <?= "<strong>login</strong>: ".$_SESSION["id"]; ?>
     <form action="#" method="post" id="connexion">
         <h3 id="title_form">Connexion</h3>
         <input type="mail" name="email" placeholder="email utilisateur" id="input_form" size="30px" required><br><br>

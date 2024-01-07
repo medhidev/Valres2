@@ -12,11 +12,6 @@ function controleurPrincipal($action){
     $lesActions = array();
     $lesActions["defaut"] = "login.php";
 
-    // différentes pages principales
-    $lesActions["responsable"] = "responsable.php";
-    $lesActions["secretaire"] = "secretaire.php";
-    $lesActions["admin"] = "admin.php";
-
     // différentes actions sur le compte
     $lesActions["login"] = "login.php";
     $lesActions["logout"] = "logout.php";
@@ -24,6 +19,9 @@ function controleurPrincipal($action){
     // différentes pages tiers
     $lesActions["reservation"] = "reservation.php";
     $lesActions["salle"] = "salle.php";
+
+    // Responsable
+    $lesActions["creer"] = "creer_reservation.php";
 
     // vérifie l'existance du chemain d'accès
     if (array_key_exists ( $action , $lesActions )){

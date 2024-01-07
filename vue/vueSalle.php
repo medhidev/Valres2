@@ -17,22 +17,6 @@
 	}
 </style>
 <body>
-	<form action="#" method="post">
-		<!-- Selectionner la categorie de la sallle -->
-		<select name="categorie_select" required>
-			<optgroup label="Categorie Salle"></optgroup>
-			<?php for ($i = 0; $i < count($categorie_salle); $i++) { ?>
-			<option value='<?= $i+1; ?>'><?= $categorie_salle[$i]["libelle"]; ?></option>
-			<?php } ?>
-		</select>
-
-		<!-- revoir cette partie avec la date -->
-		<input type="date">
-	
-		<input type="submit" value="Filtrer">
-
-	</form>
-
     <table id="salle">
 		<thead >
 			<th colspan="6">Salles de Valres</th>

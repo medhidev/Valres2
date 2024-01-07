@@ -20,8 +20,8 @@ include "$racine/model/reservation.inc.php";
 $reservation = getReservation();
 
 // Différents de vérification des champs du filtre
-if (isset($_POST["search"]))
-
+if (isset($_POST["search"])){
+    
     /*
     Categorie: Remplie
     Structure: Remplie
@@ -57,6 +57,7 @@ if (isset($_POST["search"]))
     else if(empty($_POST["structure_select"] && $_POST["date_select"])){
         $reservation_select = getThisReservation();
     }
+}
 
 /* Vue Reservation */
 include "$racine/vue/entete.php";

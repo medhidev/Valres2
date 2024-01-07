@@ -155,4 +155,23 @@ function searchReservation ($categorie, $structure, $date){
     return $result;
 }
 
+function ajouterReserveration($id_user, $salle, $date, $periode){
+    $result = true;
+
+    try {
+        $connexion = connexionBDD();
+        $req_sql = "INSERT INTO reservation (`utilisateur_id`, `salle_id`, `date`, `id_periode`) VALUES
+        (".$id_user.", ".$salle.", '".$date."', ".$periode.");";
+
+        $request = $connexion->query($req_sql);
+        $row = $request->fetch();
+
+    } catch (Exception $e){
+        $result = false;
+        die("Erreur: ".$e->getMessage());
+    }
+
+    return $result;
+}
+
 ?>

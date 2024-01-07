@@ -3,7 +3,7 @@
 // $_SESSION['utilisateur'] = null; // Déconnecte l'utilisateur
 // $_SESSION['permission'] = null; // Pour la gestion des droits
 
-$_SESSION['utilisateur'] = null;
+$_SESSION['id'] = null;
 $_SESSION['permission'] = null;
 
 /* Vue Login / Connexion  */
