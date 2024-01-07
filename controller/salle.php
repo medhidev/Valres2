@@ -13,7 +13,7 @@ include "$racine/model/bdd.inc.php";
 
 // Liste des salles
 include "$racine/model/salle.inc.php";
-$salle = getSalle();
+$salle = getSalleAndCategorie();
 
 /* Vue Salle */
 include "$racine/vue/entete.php";
