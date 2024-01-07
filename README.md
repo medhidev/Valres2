@@ -1,5 +1,11 @@
 # Valres2
 
+### Outils utilisé
+* Hebergement local du site: [WampServer](https://www.wampserver.com/)
+* Organisation / Plannification / Cahier des Charges: [Drive](https://drive.google.com/) et [Tuleap Campus](https://tuleap-campus.org/)
+* IDE (Environnement de Developpement): [Visual Studio Code](https://code.visualstudio.com/)
+
+
 ### Presentation du projet
 Ce projet est une continuité du projet valres de base qui permet la gestion des reservations des clients M2L.
 Pour ce faire nous avons mit en place un site internet où les utilisateurs en fonction de leur statut auront des accès variés.
@@ -46,6 +52,6 @@ Durant la construction de **Valres2** nous avons put prendre certaine initative 
 * la modification de la Base de donnée, qui nous a permit de mieux optimiser et surtout répondre au besoin
 de gestion des droits ainsi que pour vérifier l'etat d'une reservation.
 
-![image EA](image/EA.png)
+![image des test de validation du projet](image/test_validation.png)
 
-Pour la réalisation de ce projet nous avons aussi mit en place des mesures tel que.
+Durant la réalisation de ce projet nous avons eut l'occasion d'utiliser 
