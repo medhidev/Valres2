@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Page utilisateur</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valider Reservation</title>
 </head>
 
 <style>
@@ -16,44 +16,25 @@
 	th {
 		padding: 10px;padding-left: 20px;padding-right: 20px;
 	}
+
+    #etat_select{
+        padding-left: 10px;
+    }
+
+    /* Aligner les éléments */
+    #form_etat_select {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      display: flex;
+      align-items: baseline;
+    }
 </style>
 
-
 <body>
-
-	<form action="#" method="POST">
-		<!-- Selectionner la categorie de la sallle -->
-		<select name="categorie_select" required>
-			<optgroup label="Categorie Salle"></optgroup>
-			<?php for ($i = 0; $i < count($categorie_salle); $i++) { ?>
-			<option value='<?= $i+1; ?>'><?= $categorie_salle[$i]["libelle"]; ?></option>
-			<?php } ?>
-		</select>
-
-		<input type="text" name="structure_select" placeholder="nom structure">
-
-		<input type="date" name="date_select">
-
-		<input type="submit" name="search" value="rechercher"><br><br>
-
-		<?php
-		// Résultat de recherche
-		if (isset($_POST["search"])){
-			echo "<div style='color: #26AB5D'>"."<strong>Resultat Recherche :</strong><br><br>";
-			echo "Categorie: ".$_POST["categorie_select"]."e option<br>";
-			if (empty($_POST["structure_select"])){
-				echo "Structure: ".$_SESSION["structure"]." (ma structure) <br>";
-			}
-			else{
-				echo "Structure: ".$_POST["structure_select"]."<br>";
-			}
-			echo "Date: ".$_POST["date_select"]."</div>";
-		}
-		?>
-
-	</form>
-
-	<table id="reservations">
+    <table id="reservations">
 		<thead >
 			<th colspan="6">Tableau des réservations en cour</th>
 		</thead>
@@ -101,7 +82,13 @@
 						echo $date->format("d/m/Y");
 						?></td>
 						<td><?= $reservation[$i]["structure"]; ?></td>
-						<td><?= $reservation[$i]["etat"]; ?></td>
+						<td>
+                            <form action="#" method="post" id="form_etat_select">
+                                <label><input type="radio" name="etat_select" id="etat_select"> Valider</label>
+                                <label><input type="radio" name="etat_select" id="etat_select"> Provisoire</label>
+                                <label><input type="radio" name="etat_select" id="etat_select"> Annuler</label>
+                            </form>
+                        </td>
 					</tr>
 			<?php }
 			} ?>

@@ -1,8 +1,5 @@
 <?php
 
-// A enlever après les tests
-session_start();
-
 if ($_SERVER["SCRIPT_FILENAME"] == __FILE__) {
     $racine = "..";
 }

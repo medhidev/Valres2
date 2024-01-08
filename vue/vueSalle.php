@@ -25,10 +25,10 @@
 			<!-- Liste dynamique -->
 			<tr>
 				<td>
-					<strong>Nom Salle</strong>
+					<strong>Nom Salles</strong>
 				</td>
 				<td>
-					<strong>Categorie</strong>
+					<strong>Categories</strong>
 				</td>
 			</tr>
             <?php for ($i = 0; $i < count($salle); $i++) { ?>

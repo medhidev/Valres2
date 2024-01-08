@@ -22,6 +22,7 @@ function controleurPrincipal($action){
 
     // Responsable
     $lesActions["creer"] = "creer_reservation.php";
+    $lesActions["valide"] = "valide_reservation.php";
 
     // vérifie l'existance du chemain d'accès
     if (array_key_exists ( $action , $lesActions )){

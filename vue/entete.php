@@ -21,36 +21,21 @@
 
 <?php
 
+// session_start();
+
 if ($_SERVER["SCRIPT_FILENAME"] == __FILE__) {
     $racine = "..";
 }
 
+// if (!empty($_SESSION["id"])){
+// 	$_SESSION["id"] = null;
+// 	$_SESSION["permission"] = null;
+// 	$_SESSION["nom"] = null;
+// }
+// else{
+// 	echo "ID: ".$_SESSION["permission"]."<br>";
+// 	echo "Perm: ".$_SESSION["permission"]."<br>";
+// 	echo $_SESSION["nom"];
+// }
+
 ?>
-<nav>
-	<ul style="list-style-type: none">
-		<?php
-			if ($_SESSION['permission'] == "utilisateur"){ ?>
-				<li><a href="./?action=reservation">Reservations</a></li>
-				<li><a href="./?action=salle">Salles</a></li>
-				<!-- Mettre le Nom de l'utilisateur ! -->
-				<li><a href="./?action=logout"><?= $_SESSION['id']; ?></a></li>
-			<?php } ?>
-
-			<?php if ($_SESSION['permission'] == "responsable"){ ?>
-				<li><a href="./?action=reservation">Reservations</a></li>
-				<li><a href="./?action=salle">Salles</a></li>
-				<!-- Mettre le Nom de l'utilisateur ! -->
-				<li><a href="./?action=logout"><?= $_SESSION['id']; ?></a></li>
-			<?php } ?>
-
-			<?php if ($_SESSION['permission'] == "secretaire"){ ?>
-				<li><a href="./?action=reservation">Reservations</a></li>
-				<li><a href="./?action=salle">Salles</a></li>
-				<!-- Mettre le Nom de l'utilisateur ! -->
-				<li><a href="./?action=logout"><?= $_SESSION['id']; ?></a></li>
-			<?php } ?>
-
-			<!-- Si l'utilisateur n'est pas encore connecté (on affiche rien) -->
-			<?php if ($_SESSION['permission'] == null && $_SESSION['id'] == null)?>
-	</ul>
-</nav>
