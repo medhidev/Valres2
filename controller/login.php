@@ -1,5 +1,7 @@
 <?php
 
+session_start();
+
 if ($_SERVER["SCRIPT_FILENAME"] == __FILE__) {
     $racine = "..";
 }
@@ -8,6 +10,10 @@ if ($_SERVER["SCRIPT_FILENAME"] == __FILE__) {
 include "$racine/model/bdd.inc.php";
 include "$racine/model/message_system.inc.php";
 include "$racine/model/utilisateur.inc.php";
+
+$_SESSION["id"] = null;
+$_SESSION["permission"] = null;
+$_SESSION["nom"] = null;
 
 if(isset($_POST["connecter"])){
 
@@ -31,17 +37,17 @@ if(isset($_POST["connecter"])){
 
             // Secretaire
             case 2:
-                header ("Location: ./?action=reservation");
+                header ("Location: ./?action=valide");
                 break;
 
             // Responsable
             case 3:
-                header ("Location: ./?action=reservation");
+                header ("Location: ./?action=creer");
                 break;
 
             // Admin
             case 4:
-                header ("Location: ./?action=reservation");
+                header ("Location: ./?action=#");
                 break;
         }
     }

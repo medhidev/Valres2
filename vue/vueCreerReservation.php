@@ -38,7 +38,7 @@
 			<?php } ?>
 		</select><br><br>
 
-        <input type="submit" value="Créer">
+        <input type="submit" value="Créer" name="add_reserv">
     </form>
 </body>
 </html>
