@@ -12,13 +12,16 @@ function controleurPrincipal($action){
     $lesActions = array();
     $lesActions["defaut"] = "login.php";
 
-    // différentes actions sur le compte
+    // différentes connexion déconnexion
     $lesActions["login"] = "login.php";
-    $lesActions["logout"] = "logout.php";
+    $lesActions["logout"] = "login.php";
 
     // différentes pages tiers
     $lesActions["reservation"] = "reservation.php";
     $lesActions["salle"] = "salle.php";
+
+    // Administrateur
+    $lesActions["permission"] = "edit_perm.php";
 
     // Responsable
     $lesActions["creer"] = "creer_reservation.php";

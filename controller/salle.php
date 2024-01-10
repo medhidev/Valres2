@@ -7,16 +7,22 @@ if ($_SERVER["SCRIPT_FILENAME"] == __FILE__) {
     $racine = "..";
 }
 
-/* Model Salle */
-// Import la méthode de connexion à la base de donnée
-include "$racine/model/bdd.inc.php";
+// Vérifie que l'utilisateur soit connecté pour pouvoir accéder aux salles
+if ($_SESSION["permission"] != null){
+    /* Model Salle */
+    // Import la méthode de connexion à la base de donnée
+    include "$racine/model/bdd.inc.php";
 
-// Liste des salles
-include "$racine/model/salle.inc.php";
-$salle = getSalleAndCategorie();
+    // Liste des salles
+    include "$racine/model/salle.inc.php";
+    $salle = getSalleAndCategorie();
 
-/* Vue Salle */
-include "$racine/vue/entete.php";
-include "$racine/vue/vueSalle.php";
+    /* Vue Salle */
+    include "$racine/vue/entete.php";
+    include "$racine/vue/vueSalle.php";
+}
 
+else {
+    header("Location: ./?action=login");
+}
 ?>

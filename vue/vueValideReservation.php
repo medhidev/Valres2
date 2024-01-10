@@ -31,68 +31,76 @@
       display: flex;
       align-items: baseline;
     }
+
+	#edit_reserv {
+		width: 100px;
+		padding: 10px;
+	}
 </style>
 
 <body>
-    <table id="reservations">
-		<thead >
-			<th colspan="6">Tableau des réservations en cour</th>
-		</thead>
-		<tbody>
-			<!-- Liste dynamique -->
-			<tr>
-				<td>
-					<strong>Période</strong>
-				</td>
-				<td>
-					<strong>Salle</strong>
-				</td>
-				<td>
-					<strong>Date</strong>
-				</td>
-				<td>
-					<strong>Structure</strong>
-				</td>
-				<td>
-					<strong>Etat</strong>
-				</td>
-			</tr>
+	<form action="#" method="post" id="form_etat_select">	
+		<table id="reservations">
+			<thead >
+				<th colspan="6">Tableau des réservations en cour</th>
+			</thead>
+			<tbody>
+				<!-- Liste dynamique -->
+				<tr>
+					<td>
+						<strong>Période</strong>
+					</td>
+					<td>
+						<strong>Salle</strong>
+					</td>
+					<td>
+						<strong>Date</strong>
+					</td>
+					<td>
+						<strong>Structure</strong>
+					</td>
+					<td colspan="2">
+						<strong>Etat</strong>
+					</td>
+				</tr>
 
-			<?php
-			if (isset($_POST["search"])){
-				for ($i = 0; $i < count($reservation_select); $i++) { ?>
-					<tr>
-						<td><?= $reservation_select[$i]["periode"]; ?></td>
-						<td><?= $reservation_select[$i]["salle_nom"]; ?></td>
-						<td><?php
-						$date = new DateTime($reservation[$i]["date"]);
-						echo $date->format("d/m/Y");
-						?></td>
-						<td><?= $reservation_select[$i]["structure"]; ?></td>
-						<td><?= $reservation_select[$i]["etat"]; ?></td>
-					</tr>
-			<?php }
-			} else {
-				for ($i = 0; $i < count($reservation); $i++) { ?>
-					<tr>
-						<td><?= $reservation[$i]["periode"]; ?></td>
-						<td><?= $reservation[$i]["salle_nom"]; ?></td>
-						<td><?php
-						$date = new DateTime($reservation[$i]["date"]);
-						echo $date->format("d/m/Y");
-						?></td>
-						<td><?= $reservation[$i]["structure"]; ?></td>
-						<td>
-                            <form action="#" method="post" id="form_etat_select">
-                                <label><input type="radio" name="etat_select" id="etat_select"> Valider</label>
-                                <label><input type="radio" name="etat_select" id="etat_select"> Provisoire</label>
-                                <label><input type="radio" name="etat_select" id="etat_select"> Annuler</label>
-                            </form>
-                        </td>
-					</tr>
-			<?php }
-			} ?>
-		</tbody>
-	</table>
+				<?php
+				if (isset($_POST["search"])){
+					for ($i = 0; $i < count($reservation_select); $i++) { ?>
+						<tr>
+							<td><?= $reservation_select[$i]["periode"]; ?></td>
+							<td><?= $reservation_select[$i]["salle_nom"]; ?></td>
+							<td><?php
+							$date = new DateTime($reservation_select[$i]["date"]);
+							echo $date->format("d/m/Y");
+							?></td>
+							<td><?= $reservation_select[$i]["structure"]; ?></td>
+							<td><?= $reservation_select[$i]["etat"]; ?></td>
+						</tr>
+				<?php }
+				} else {
+					for ($i = 0; $i < count($reservation); $i++) { ?>
+						<tr>
+							<td><?= $reservation[$i]["periode"]; ?></td>
+							<td><?= $reservation[$i]["salle_nom"]; ?></td>
+							<td><?php
+							$date = new DateTime($reservation[$i]["date"]);
+							echo $date->format("d/m/Y");
+							?></td>
+							<td><?= $reservation[$i]["structure"]; ?></td>
+							<td><?= "<strong>".$reservation[$i]["etat"]."</strong>"; ?></td>
+							<td>
+								<input type="button" name=<?= "valide".$i; ?> value="Valider"><br>
+								<input type="button" name=<?= "provisoire".$i; ?> value="Provisoire"><br>
+								<input type="button" name=<?= "annuler".$i; ?> value="Annuler">
+							</td>
+						</tr>
+				<?php }
+				} ?>
+			</tbody>
+		</table><br>
+
+		<input type="button" name="edit_reserv" id="edit_reserv" value="Enregister">				
+	</form>
 </body>
 </html>

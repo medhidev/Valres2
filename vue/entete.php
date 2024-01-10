@@ -59,7 +59,7 @@ if ($_SERVER["SCRIPT_FILENAME"] == __FILE__) {
 
 <!-- ADMIN -->
 <?php if ($_SESSION["permission"] == 4){ ?>
-	<li><a href="./?action=creer">Créer</a></li>
+	<li><a href="./?action=permission">Permissions</a></li>
 	<li><a href="./?action=reservation">Reservations</a></li>
 	<li><a href="./?action=salle">Salles</a></li>
 	<!-- Mettre le Nom de l'utilisateur ! -->

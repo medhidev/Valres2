@@ -47,7 +47,7 @@ if(isset($_POST["connecter"])){
 
             // Admin
             case 4:
-                header ("Location: ./?action=#");
+                header ("Location: ./?action=permission");
                 break;
         }
     }

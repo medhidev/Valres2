@@ -44,6 +44,7 @@ function dateEmpty($categorie, $structure){
         INNER JOIN salle s ON s.id = r.salle_id
         WHERE u.structure_nom = '".$structure."' AND s.categorie = ".$categorie.";";
 
+
         $request = $connexion->query($req_sql);
         $row = $request->fetch();
 
@@ -51,7 +52,6 @@ function dateEmpty($categorie, $structure){
             $result[] = $row;
             $row = $request->fetch();
         }
-
 
     } catch (Exception $e){
         die("Erreur: ".$e->getMessage());
@@ -145,7 +145,6 @@ function searchReservation ($categorie, $structure, $date){
             $result[] = $row;
             $row = $request->fetch();
         }
-
 
     } catch (Exception $e){
         die("Erreur: ".$e->getMessage());

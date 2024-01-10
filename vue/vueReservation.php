@@ -84,7 +84,7 @@
 						<td><?= $reservation_select[$i]["periode"]; ?></td>
 						<td><?= $reservation_select[$i]["salle_nom"]; ?></td>
 						<td><?php
-						$date = new DateTime($reservation[$i]["date"]);
+						$date = new DateTime($reservation_select[$i]["date"]);
 						echo $date->format("d/m/Y");
 						?></td>
 						<td><?= $reservation_select[$i]["structure"]; ?></td>
