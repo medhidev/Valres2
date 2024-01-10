@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <title>Connexion Valres</title>
 </head>
 <style>
@@ -30,13 +31,12 @@
 <body>
     <!-- Mettre le Nom de l'utilisateur ! -->
     <form action="#" method="post" id="connexion">
-        <h3 id="title_form">Connexion</h3>
+        <h3 id="title_form">Connexion</h3><br>
+
         <input type="mail" name="email" placeholder="email utilisateur" id="input_form" size="30px" required><br><br>
 
         <input type="password" name="password" placeholder="mot de passe" size="30px" required><br><br>
 
-        <a href="#" id="center_form">créer un compte</a><br><br>
-        
         <input type="submit" value="connecter" name="connecter">
     </form>
 </body>

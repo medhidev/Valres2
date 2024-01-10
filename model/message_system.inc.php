@@ -11,7 +11,7 @@ function sendValide($message){
 }
 
 // Pattern d'erreur (pour éviter de répéter des messages erreurs)
-function sendConfirm($message){
+function sendWarn($message){
     return "<strong style='color: #FF9900;'>".$message." ?</strong>";
 }
 ?>

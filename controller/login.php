@@ -14,6 +14,7 @@ include "$racine/model/utilisateur.inc.php";
 $_SESSION["id"] = null;
 $_SESSION["permission"] = null;
 $_SESSION["nom"] = null;
+$_SESSION["structure"] = null;
 
 if(isset($_POST["connecter"])){
 
@@ -26,6 +27,7 @@ if(isset($_POST["connecter"])){
         $_SESSION["id"] = $info["utilisateur_id"];
         $_SESSION["permission"] = $info["id_perm"];
         $_SESSION["nom"] = $info["nom"];
+        $_SESSION["structure"] = $info["structure_nom"];
 
 
         // Connexion réussie

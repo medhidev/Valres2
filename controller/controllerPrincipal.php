@@ -25,7 +25,7 @@ function controleurPrincipal($action){
 
     // Responsable
     $lesActions["creer"] = "creer_reservation.php";
-    $lesActions["suppr"] = "#";
+    $lesActions["suppr"] = "suppr_reservation.php";
 
     // Secretaire
     $lesActions["valide"] = "valide_reservation.php";

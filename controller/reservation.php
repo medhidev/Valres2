@@ -29,8 +29,16 @@ if ($_SESSION["permission"] == 1 || $_SESSION["permission"] == 3){
         Date: Remplie
         */
         if (!empty($_POST["categorie_select"] && $_POST["structure_select"] && $_POST["date_select"])){
-            echo "test cat+struc+date";
             $reservation_select = searchReservation($_POST["categorie_select"], $_POST["structure_select"], $_POST["date_select"]);
+        }
+
+        /*
+        Categorie: Remplie
+        Structure: Vide
+        Date: Vide
+        */
+        else if(empty($_POST["date_select"]) && empty($_POST["structure_select"])){
+            $reservation_select = getReservByCategorie($_POST["categorie_select"]);
         }
 
         /*
@@ -39,7 +47,6 @@ if ($_SESSION["permission"] == 1 || $_SESSION["permission"] == 3){
         Date: Vide
         */
         else if(empty($_POST["date_select"])){
-            echo "test cat+struc";
             $reservation_select = dateEmpty($_POST["categorie_select"], $_POST["structure_select"]);
         }
 
@@ -49,18 +56,7 @@ if ($_SESSION["permission"] == 1 || $_SESSION["permission"] == 3){
         Date: Remplie
         */
         else if(empty($_POST["structure_select"])){
-            echo "test cat+date";
             $reservation_select = structureEmpty($_POST["categorie_select"], $_POST["date_select"]);
-        }
-
-        /*
-        Categorie: Remplie
-        Structure: Vide
-        Date: Vide
-        */
-        else if(empty($_POST["structure_select"] && $_POST["date_select"])){
-            echo "test cat";
-            $reservation_select = getThisReservation();
         }
     }
 

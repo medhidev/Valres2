@@ -20,7 +20,6 @@
 
 
 <body>
-
 	<form action="#" method="POST">
 		<!-- Selectionner la categorie de la sallle -->
 		<select name="categorie_select" required>
@@ -41,9 +40,12 @@
 		if (isset($_POST["search"])){
 			echo "<div style='color: #26AB5D'>"."<strong>Resultat Recherche :</strong><br><br>";
 			echo "Categorie: ".$_POST["categorie_select"]."e option<br>";
+
 			if (empty($_POST["structure_select"])){
-				echo "Structure: ".$_SESSION["structure"]." (ma structure) <br>";
+				// structure de l'utilisateur
+				echo "Structure: (".$_SESSION["structure"].") <br>";
 			}
+
 			else{
 				echo "Structure: ".$_POST["structure_select"]."<br>";
 			}

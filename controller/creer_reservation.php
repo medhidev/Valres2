@@ -28,11 +28,16 @@ if ($_SESSION["permission"] == 3 || $_SESSION["permission"] == 2){
     if (isset($_POST["add_reserv"])){
 
         // Si la reservation c'est bien créer -> alors on affiche un message de validité
-        if (ajouterReserveration($_SESSION["id"], $_POST["salle_select"], $_POST["date_select"], $_POST["periode_select"])){
-            echo sendValide("Creation de la reservation avec succès");
+        if (empty(verifReservation($_POST["salle_select"], $_POST["date_select"], $_POST["periode_select"]))){
+            if (ajouterReserveration($_SESSION["id"], $_POST["salle_select"], $_POST["date_select"], $_POST["periode_select"])){
+                echo sendValide("Creation de la reservation avec succès");
+            }
+            else {
+                echo sendError("Creation de la reservation Invalide");
+            }
         }
         else {
-            echo sendError("Creation de la reservation Invalide");
+            echo sendWarn("Une reservation est déjà présente");
         }
     }
 

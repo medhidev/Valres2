@@ -44,7 +44,6 @@ function dateEmpty($categorie, $structure){
         INNER JOIN salle s ON s.id = r.salle_id
         WHERE u.structure_nom = '".$structure."' AND s.categorie = ".$categorie.";";
 
-
         $request = $connexion->query($req_sql);
         $row = $request->fetch();
 
@@ -93,7 +92,7 @@ function structureEmpty($categorie, $date){
 }
 
 // Permet d'obtenir la liste des reservations de l'utilisateur
-function getThisReservation(){
+function getReservByCategorie($categorie){
     $result = array();
 
     try {
@@ -104,7 +103,7 @@ function getThisReservation(){
         INNER JOIN utilisateur u ON u.utilisateur_id = r.utilisateur_id
         INNER JOIN periode p ON p.id_periode = r.id_periode
         INNER JOIN salle s ON s.id = r.salle_id
-        WHERE u.structure_nom = '".$_SESSION["structure"]."';";
+        WHERE s.categorie = ".$categorie.";";
 
         $request = $connexion->query($req_sql);
         $row = $request->fetch();
@@ -164,6 +163,77 @@ function ajouterReserveration($id_user, $salle, $date, $periode){
 
         $request = $connexion->query($req_sql);
         $row = $request->fetch();
+
+    } catch (Exception $e){
+        $result = false;
+        die("Erreur: ".$e->getMessage());
+    }
+
+    return $result;
+}
+
+function verifReservation($salle, $date, $periode){
+    $result = true;
+
+    try {
+        $connexion = connexionBDD();
+        $req_sql = "SELECT * FROM reservation
+        WHERE salle_id = ".$salle." AND date = '".$date."' AND id_periode = ".$periode.";";
+
+        $request = $connexion->query($req_sql);
+        $row = $request->fetch();
+
+    } catch (Exception $e){
+        $result = false;
+        die("Erreur: ".$e->getMessage());
+    }
+
+    if ($row == null){
+        $result = false;
+    }
+
+    return $result;
+}
+
+function getThisReservation(){
+    $result = array();
+
+    try {
+        $connexion = connexionBDD();
+        $req_sql = "SELECT * FROM reservation WHERE utilisateur_id = ".$_SESSION["id"].";";
+
+        $request = $connexion->query($req_sql);
+        $row = $request->fetch();
+
+        while ($row){
+            $result[] = $row;
+            $row = $request->fetch();
+        }
+
+    } catch (Exception $e){
+        die("Erreur: ".$e->getMessage());
+    }
+
+    // renvoie la liste des reservations
+    return $result;
+}
+
+function supprimerReservation($ligne_suppr){
+    $result = true;
+
+    try {
+        $connexion = connexionBDD();
+        $req_sql = "DELETE FROM reservation
+        WHERE utilisateur_id = ".$_SESSION["id"].";";
+
+        $request = $connexion->query($req_sql);
+        $row = $request->fetch();
+
+        // on va regarder le nom
+        for ($i = 0; $i < count($ligne_suppr); $i++){
+            $row = $request->fetch();
+        }
+
 
     } catch (Exception $e){
         $result = false;
