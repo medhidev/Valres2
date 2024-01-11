@@ -54,4 +54,8 @@ de gestion des droits ainsi que pour vérifier l'etat d'une reservation.
 
 ![image des test de validation du projet](image/test_validation.png)
 
-Durant la réalisation de ce projet nous avons eut l'occasion d'utiliser 
+Durant la réalisation de ce projet nous avons eut l'occasion d'utiliser nous avons utilisé la méthode MVC qui permet de structurer de la façon la plus conventionnel possible notre projet.
+
+* Model → Contient les script qui permettent la liaison vers la BDD
+* View → Permet de gérer tout la partie Front *(Affichage du site web)*
+* Controller → Comme son nom l'indique controle / vérifier que les *données* entrées peuvent correctement être exploitées

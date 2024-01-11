@@ -6,7 +6,7 @@ function getReservation(){
 
     try {
         $connexion = connexionBDD();
-        $req_sql = " SELECT p.libelle AS periode, s.salle_nom, r.date, u.structure_nom AS structure, e.libelle AS etat
+        $req_sql = " SELECT p.libelle AS periode, r.id AS id_reserv, s.salle_nom, r.date, u.structure_nom AS structure, e.libelle AS etat
         FROM reservation r
         INNER JOIN etat e ON r.idEtat = e.idEtat
         INNER JOIN utilisateur u ON u.utilisateur_id = r.utilisateur_id
@@ -164,7 +164,7 @@ function ajouterReserveration($id_user, $salle, $date, $periode){
         if($_SESSION["id"] == 2)
             $etat = 1;
 
-        $req_sql = "INSERT INTO reservation (`utilisateur_id`, `salle_id`, `date`, `id_periode`) VALUES
+        $req_sql = "INSERT INTO reservation (`utilisateur_id`, `salle_id`, `date`, `id_periode`, `idEtat`) VALUES
         (".$id_user.", ".$salle.", '".$date."', ".$periode.", ".$etat.");";
 
         $request = $connexion->query($req_sql);
@@ -201,6 +201,7 @@ function verifReservation($salle, $date, $periode){
     return $result;
 }
 
+// récupère tout les réservation en fonction de l'ID du compte
 function getThisReservation(){
     $result = array();
 
@@ -224,6 +225,7 @@ function getThisReservation(){
     return $result;
 }
 
+// Supprime les reservations en fonction de la ligne du tableau
 function supprimerReservation($ligne_suppr){
     $result = true;
 
@@ -233,19 +235,30 @@ function supprimerReservation($ligne_suppr){
         WHERE utilisateur_id = ".$_SESSION["id"].";";
 
         $request = $connexion->query($req_sql);
-        $row = $request->fetch();
-
-        // on va regarder le nom
-        for ($i = 0; $i < count($ligne_suppr); $i++){
-            $row = $request->fetch();
-        }
-
 
     } catch (Exception $e){
         $result = false;
         die("Erreur: ".$e->getMessage());
     }
 
+    return $result;
+}
+
+function getUpdateReservation($id_reserv, $id_etat){
+    $result = false;
+    try {
+        $connexion = connexionBDD();
+        $req_sql = "UPDATE reservation SET idEtat = ".$id_etat." WHERE id = ".$id_reserv.";";
+
+        $request = $connexion->query($req_sql);
+        $result = true;
+
+    } catch (Exception $e){
+        $result = false;
+        die("Erreur: ".$e->getMessage());
+    }
+
+    // renvoie la liste des reservations
     return $result;
 }
 

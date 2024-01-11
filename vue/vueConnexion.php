@@ -27,6 +27,13 @@
         justify-content: center;
     }
 
+    #connexion_btn{
+        background-color: #08c252;
+        border: none;
+        padding: 10px;
+        border-radius: 5px 
+    }
+
 </style>
 <body>
     <!-- Mettre le Nom de l'utilisateur ! -->
@@ -37,7 +44,7 @@
 
         <input type="password" name="password" placeholder="mot de passe" size="30px" required><br><br>
 
-        <input type="submit" value="connecter" name="connecter">
+        <input type="submit" value="connecter" name="connecter" id="connexion_btn">
     </form>
 </body>
 </html>

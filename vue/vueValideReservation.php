@@ -42,7 +42,7 @@
 	<form action="#" method="post" id="form_etat_select">	
 		<table id="reservations">
 			<thead >
-				<th colspan="6">Tableau des réservations en cour</th>
+				<th colspan="6">Tableau des réservations en cours</th>
 			</thead>
 			<tbody>
 				<!-- Liste dynamique -->
@@ -90,7 +90,8 @@
 			</tbody>
 		</table><br>
 
-		<input type="submit" name="edit_reserv" id="edit_reserv" value="Enregister">				
+		<input type="submit" name="edit_reserv" id="edit_reserv" value="Enregister" style="background-color: #08c252; border: none; padding: 10px; border-radius: 5px;">
+					
 	</form>
 </body>
 </html>

@@ -33,7 +33,7 @@
 
 		<input type="date" name="date_select">
 
-		<input type="submit" name="search" value="rechercher"><br><br>
+		<input type="submit" name="search" value="rechercher" style="background-color: #08c252; border: none; padding: 5px; border-radius: 5px;"><br><br>
 
 		<?php
 		// Résultat de recherche

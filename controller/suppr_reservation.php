@@ -10,12 +10,16 @@ if ($_SERVER["SCRIPT_FILENAME"] == __FILE__) {
 }
 
 // Vérifie que le compte sois un Responsable ou une Secretaire
-if ($_SESSION["permission"] == 3){
+if ($_SESSION["permission"] == 3 || $_SESSION["permission"] == 2){
     /* Model creation Reservation */
     include "$racine/model/message_system.inc.php";
     include "$racine/model/reservation.inc.php";
 
-    $reservation = getThisReservation();
+    if (empty(getThisReservation())){
+        echo sendWarn("Aucun reservation trouvée :(");
+    }
+    else
+        $reservation = getThisReservation();
 
     // Vérifie la validation du formulaire
     if (isset($_POST["suppr_reserv"])){

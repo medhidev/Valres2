@@ -23,10 +23,8 @@ if ($_SESSION["permission"] == 2){
     include "$racine/model/etat.inc.php";
     $etat = getEtat();
 
-    $liste_valide = array();
-
     for ($i = 0; $i < count($reservation); $i++) {
-	    array_push($liste_valide, $_POST["etat_select"]);
+        getUpdateReservation($i, $_POST[""]);
     }
     
     // Appuie sur le boutton Enregistrer

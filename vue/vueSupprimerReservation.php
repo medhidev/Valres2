@@ -27,16 +27,16 @@
 		<select name="reservation_select" id="liste_reservation" multiple required>
 			<optgroup label="Liste des Reservation effectués"></optgroup>
 			<?php for ($i = 0; $i < count($reservation); $i++) { ?>
-			<option value='<?= $i+1; ?>'>
-            <?php
-                $date = new DateTime($reservation[$i]["date"]);
-                echo "Reservation ".($i+1)." - ".$date->format("d/m/Y");
-            ?>
+                <option value='<?= $i+1; ?>'>
+                <?php
+                    $date = new DateTime($reservation[$i]["date"]);
+                    echo "Reservation ".($i+1)." - ".$date->format("d/m/Y");
+                ?>
             </option>
 			<?php } ?>
 		</select><br><br>
 
-        <input type="submit" value="Supprimer" name="suppr_reserv">
+        <input type="submit" value="Supprimer" name="suppr_reserv" style="background-color: #fc3a41; border: none; padding: 10px; border-radius: 5px;">
     </form>
 </body>
 </html>

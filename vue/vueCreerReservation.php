@@ -38,7 +38,7 @@
 			<?php } ?>
 		</select><br><br>
 
-        <input type="submit" value="Créer" name="add_reserv">
+        <input type="submit" value="Créer" name="add_reserv" style="background-color: #08c252; border: none; padding: 10px; border-radius: 5px;">
     </form>
 </body>
 </html>
