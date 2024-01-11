@@ -19,6 +19,21 @@ if ($_SESSION["permission"] == 2){
     include "$racine/model/reservation.inc.php";
     $reservation = getReservation();
 
+    // liste etat
+    include "$racine/model/etat.inc.php";
+    $etat = getEtat();
+
+    $liste_valide = array();
+
+    for ($i = 0; $i < count($reservation); $i++) {
+	    array_push($liste_valide, $_POST["etat_select"]);
+    }
+    
+    // Appuie sur le boutton Enregistrer
+	if (isset($_POST["edit_reserv"])){
+		echo var_dump($liste_valide);
+	}
+
     /* Vue Reservation */
     include "$racine/vue/entete.php";
     include "$racine/vue/vueValideReservation.php";

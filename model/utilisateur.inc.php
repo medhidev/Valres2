@@ -73,5 +73,63 @@ function renderUserTable($users) {
     }
 }
 
+// Créer un utilisateur
+function addUser($nom, $prenom, $id_structure, $nom_structure, $adresse_structure, $mail, $id_perm, $password){
+
+    $result = true;
+
+    try {
+        $connexion = connexionBDD();
+        $req_sql = "INSERT INTO utilisateur (`nom`, `prenom`, `structure_id`, `structure_nom`, `structure_adresse`, `mail`, `id_perm`, `mdp`) VALUES
+        ('$nom', '$prenom', ".$id_structure.", '$nom_structure', '$adresse_structure', '$mail', ".$id_perm.", '$password');";
+
+        $request = $connexion->query($req_sql);
+        $row = $request->fetch();
+        $result = $row;
+
+    } catch (Exception $e){
+        $result = false;
+        die("Erreur de connexion: ".$e->getMessage());
+    }
+
+    if (empty($row)){
+        $result = false;
+    }
+
+    // renvoie vrai si oui/non le compte a bien été créer
+    return $result;
+}
+
+// Supprimer un utilisateur
+function supprUser($login, $mdp){
+    
+    $result = true;
+
+    try {
+        $connexion = connexionBDD();
+        $req_sql = "INSERT INTO utilisateur (`nom`, `prenom`, `structure_id`, `structure_nom`, `structure_adresse`, `mail`, `id_perm`, `mdp`) VALUES
+        ('$nom', '$prenom', ".$id_structure.", '$nom_structure', '$adresse_structure', '$mail', ".$id_perm.", '$password');";
+
+        $request = $connexion->query($req_sql);
+        $row = $request->fetch();
+        $result = $row;
+
+    } catch (Exception $e){
+        $result = false;
+        die("Erreur de connexion: ".$e->getMessage());
+    }
+
+    if (empty($row)){
+        $result = false;
+    }
+
+    // renvoie vrai si oui/non le compte a bien été supprimer
+    return $result;
+}
+
+// Change les permission des utilisateurs
+function updatePerm(){
+
+}
 
 ?>

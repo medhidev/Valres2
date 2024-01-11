@@ -42,8 +42,8 @@ if ($_SERVER["SCRIPT_FILENAME"] == __FILE__) {
 
 <!-- SECRETAIRE -->
 <?php if ($_SESSION["permission"] == 2){ ?>
+	<li><a href="./?action=valide">Valider</a></li>
 	<li><a href="./?action=creer">Créer</a></li>
-	<li><a href="./?action=reservation">Reservations</a></li>
 	<li><a href="./?action=salle">Salles</a></li>
 	<li><a href="./?action=login"><?= $_SESSION["nom"]; ?></a></li>
 <?php } ?>

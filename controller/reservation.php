@@ -7,7 +7,7 @@ if ($_SERVER["SCRIPT_FILENAME"] == __FILE__) {
 }
 
 // Vérifie que le compte sois un Utilisateur ou Responsable
-if ($_SESSION["permission"] == 1 || $_SESSION["permission"] == 3){
+if ($_SESSION["permission"] == 1 || $_SESSION["permission"] == 2 || $_SESSION["permission"] == 3){
     /* Model Reservation */
     // Import la méthode de connexion à la base de donnée
     include "$racine/model/bdd.inc.php";

@@ -53,7 +53,7 @@
         </button>
       </div>
       <div class="modal-body">
-        <form id="formNouvelUtilisateur">
+        <form action="#" method="post" id="formNouvelUtilisateur">
           <div class="form-group">
             <label for="nom">Nom</label>
             <input type="text" class="form-control" id="nom" name="nom" required>
@@ -63,7 +63,7 @@
             <input type="text" class="form-control" id="prenom" name="prenom" required>
           </div>
           <div class="form-group">
-            <label for="structure_id">identifiant de la structure</label>
+            <label for="structure_id">Identifiant de la structure</label>
             <input type="text" class="form-control" id="structure_id" name="structure_id" required>
           </div>
           <div class="form-group">
@@ -83,7 +83,7 @@
             <input type="text" class="form-control" id="id_perm" name="id_perm" required>
           </div>
           <div class="form-group">
-            <label for="mdp">Mot de passe(par default)</label>
+            <label for="mdp">Mot de passe</label>
             <input type="text" class="form-control" id="mdp" name="mdp" required>
           </div>
           <button type="submit" class="btn btn-primary">Enregistrer</button>

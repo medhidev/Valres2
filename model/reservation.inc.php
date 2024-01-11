@@ -155,11 +155,17 @@ function searchReservation ($categorie, $structure, $date){
 
 function ajouterReserveration($id_user, $salle, $date, $periode){
     $result = true;
+    $etat = 2;
 
     try {
         $connexion = connexionBDD();
+
+        // Si l'utilisateur est secretaire -> change l'etat en valide
+        if($_SESSION["id"] == 2)
+            $etat = 1;
+
         $req_sql = "INSERT INTO reservation (`utilisateur_id`, `salle_id`, `date`, `id_periode`) VALUES
-        (".$id_user.", ".$salle.", '".$date."', ".$periode.");";
+        (".$id_user.", ".$salle.", '".$date."', ".$periode.", ".$etat.");";
 
         $request = $connexion->query($req_sql);
         $row = $request->fetch();

@@ -65,42 +65,32 @@
 				</tr>
 
 				<?php
-				if (isset($_POST["search"])){
-					for ($i = 0; $i < count($reservation_select); $i++) { ?>
-						<tr>
-							<td><?= $reservation_select[$i]["periode"]; ?></td>
-							<td><?= $reservation_select[$i]["salle_nom"]; ?></td>
-							<td><?php
-							$date = new DateTime($reservation_select[$i]["date"]);
-							echo $date->format("d/m/Y");
-							?></td>
-							<td><?= $reservation_select[$i]["structure"]; ?></td>
-							<td><?= $reservation_select[$i]["etat"]; ?></td>
-						</tr>
-				<?php }
-				} else {
-					for ($i = 0; $i < count($reservation); $i++) { ?>
-						<tr>
-							<td><?= $reservation[$i]["periode"]; ?></td>
-							<td><?= $reservation[$i]["salle_nom"]; ?></td>
-							<td><?php
-							$date = new DateTime($reservation[$i]["date"]);
-							echo $date->format("d/m/Y");
-							?></td>
-							<td><?= $reservation[$i]["structure"]; ?></td>
-							<td><?= "<strong>".$reservation[$i]["etat"]."</strong>"; ?></td>
-							<td>
-								<input type="button" name=<?= "valide".$i; ?> value="Valider"><br>
-								<input type="button" name=<?= "provisoire".$i; ?> value="Provisoire"><br>
-								<input type="button" name=<?= "annuler".$i; ?> value="Annuler">
-							</td>
-						</tr>
-				<?php }
-				} ?>
+				for ($i = 0; $i < count($reservation); $i++) { ?>
+					<tr>
+						<td><?= $reservation[$i]["periode"]; ?></td>
+						<td><?= $reservation[$i]["salle_nom"]; ?></td>
+						<td><?php
+						$date = new DateTime($reservation[$i]["date"]);
+						echo $date->format("d/m/Y");
+						?></td>
+						<td><?= $reservation[$i]["structure"]; ?></td>
+						<td><?= "<strong>".$reservation[$i]["etat"]."</strong>"; ?></td>
+						<td>
+							<!-- Pas réussis liste totalement dynamique -->
+							<select name="etat_select">
+								<optgroup label="Etat réservation"></optgroup>
+								<option value="1" ><?= $etat[0]["libelle"]; ?></option>
+								<option value="2" selected><?= $etat[1]["libelle"]; ?></option>
+								<option value="3" ><?= $etat[2]["libelle"]; ?></option>
+							</select>
+						</td>
+					</tr>
+				<?php } ?>
+				<?php  ?>
 			</tbody>
 		</table><br>
 
-		<input type="button" name="edit_reserv" id="edit_reserv" value="Enregister">				
+		<input type="submit" name="edit_reserv" id="edit_reserv" value="Enregister">				
 	</form>
 </body>
 </html>
