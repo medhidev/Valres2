@@ -3,19 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/Valres2/vue/css/salle.css">
     <title>Page Salle</title>
 </head>
-<style>
-	td, th{
-		border: 1px solid;
-		text-align: center;
-		padding: 8px;
-	}
-
-	th {
-		padding: 10px;padding-left: 20px;padding-right: 20px;
-	}
-</style>
 <body>
     <table id="salle">
 		<thead >

@@ -1,29 +1,3 @@
-<style>
-	body{
-		font-family: arial;
-	}
-
-	li {
-		display: inline-block;
-	}
-
-	a{
-		margin-right: 10px;
-		text-decoration: none;
-		color: #1E90FF
-	}
-
-	input:focus{
-        /* border: none; */
-        outline: none;
-    }
-
-	nav{
-		background-color: #c2dbed;
-		padding: 20px;
-	}
-</style>
-
 <?php
 
 if ($_SERVER["SCRIPT_FILENAME"] == __FILE__) {
@@ -33,6 +7,8 @@ if ($_SERVER["SCRIPT_FILENAME"] == __FILE__) {
 ?>
 
 <!-- NAV BAR -->
+<link rel="stylesheet" href="/Valres2/vue/css/root.css">
+
 <?php
 if ($_SESSION["permission"] == null && $_SESSION["id"] == null){}
 else { ?>
@@ -41,8 +17,8 @@ else { ?>
 		<?php if ($_SESSION["permission"] == 1){ ?>
 			<li><a href="./?action=reservation">Reservations</a></li>
 			<li><a href="./?action=salle">Salles</a></li>
+			<li><?= "Utilisateur: <strong>".$_SESSION["nom"]."</strong>"; ?></li>
 			<li><a href="./?action=logout">Deconnexion</a></li>
-			<li><?= $_SESSION["nom"]." (Utilisateur)"; ?></li>
 		<?php } ?>
 
 		<!-- SECRETAIRE -->

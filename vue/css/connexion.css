@@ -1,0 +1,43 @@
+@import url("root.css");
+
+#connexion{
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 20px;
+    border: solid 1px;
+    border-radius: 10px;
+    background-color: var(--gray-medium);
+}
+
+#title_form{
+    color: var(--light-gray);
+    text-align:center;
+}
+
+input{
+    font-size: var(--police);
+}
+
+#center_form{
+    display: flex;
+    justify-content: center;
+}
+
+#connexion_btn{
+    background-color: #08c252;
+    border: none;
+    padding: 10px;
+    border-radius: 5px
+}
+
+#btn_position{
+    display: flex;
+    justify-content: center;
+}
+
+#icon{
+    padding-right: 10px;
+    color: var(--light-gray);
+}

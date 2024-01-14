@@ -1,0 +1,19 @@
+@import url("root.css");
+
+
+td, th{
+    border: 1px solid;
+    text-align: center;
+    padding: 8px;
+}
+
+th {
+    padding: var(--bit);
+    padding-left: var(--bit2);
+    padding-right: var(--bit2);
+}
+
+table{
+    display: flex;
+    justify-content: center;
+}

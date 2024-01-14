@@ -1,0 +1,92 @@
+:root{
+    /* PANNEL */
+    --dark-gray: #0D1B2B;
+    --gray-medium: #1C263D;
+    --cyan-gray: #435B7B;
+    --gray: #7C90AD;
+    --light-gray: #E6E7E4;
+
+    /* Couleurs Spéciales */
+    
+
+    /* Autres */
+    --police: 18px;
+
+    /* Taille */
+    --separe: 2px;
+    --bit: 10px;
+    --bit2: 20px;
+    --little-bit: 5%;
+    --little: 10%;
+    --medium: 20%;
+    --mid: 200px;
+    --huge: 50%;
+    --max: 100%;
+
+}
+
+body{
+    font-family: monospace;
+    font-size: var(--police);
+    background-color: var(--cyan-gray);
+}
+
+li {
+    padding-left: var(--separe);
+    display: inline-block;
+}
+
+a{
+    margin-right: 10px;
+    text-decoration: none;
+    color: var(--light-gray);
+}
+
+select, input, table{
+    font-size: var(--police);
+    border: none;
+    border-radius: var(--separe);
+}
+
+/* Saisit
+
+input{
+    border: none;
+    border-radius: var(--separe);
+} */
+
+select:focus, input:focus{
+    /* border: none; */
+    outline: none;
+}
+
+/* NAVBAR */
+
+nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: var(--max);
+
+    color: var(--gray);
+    background-color: var(--gray-medium);
+    
+    padding: 20px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item_right{
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* TABLEAU */
+
+th{
+    background-color: var(--dark-gray); 
+}
+
+td{
+    background-color: var(--light-gray);
+}

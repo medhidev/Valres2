@@ -3,48 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+    <!-- Dependance -->
+    <script src="https://kit.fontawesome.com/7aec2fa477.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/Valres2/vue/css/root.css">
+    <link rel="stylesheet" href="/Valres2/vue/css/connexion.css">
+
     <title>Connexion Valres</title>
 </head>
-<style>
-    #connexion{
-        position: absolute;
-        top: 30%;
-        left: 50%;
-        transform: translate(-50%,-50%);
-        padding: 20px;
-        border: solid 1px;
-        border-radius: 10px;
-        background-color: #D6E8FE;
-    }
 
-    #title_form{
-        text-align:center;
-    }
-
-    #center_form{
-        display: flex;
-        justify-content: center;
-    }
-
-    #connexion_btn{
-        background-color: #08c252;
-        border: none;
-        padding: 10px;
-        border-radius: 5px 
-    }
-
-</style>
 <body>
     <!-- Mettre le Nom de l'utilisateur ! -->
+
     <form action="#" method="post" id="connexion">
-        <h3 id="title_form">Connexion</h3><br>
+        <h2 id="title_form">Connexion</h2><br>
 
-        <input type="mail" name="email" placeholder="email utilisateur" id="input_form" size="30px" required><br><br>
+        <span id="icon"><i class="fa fa-at"></i></span>
+        <input type="mail" name="email" placeholder="email utilisateur" id="input_form" size=30% required><br><br>
 
-        <input type="password" name="password" placeholder="mot de passe" size="30px" required><br><br>
+        <span id="icon"><i class="fas fa-lock"></i></span>
+        <input type="password" name="password" placeholder="mot de passe" size=30% required><br><br>
 
-        <input type="submit" value="connecter" name="connecter" id="connexion_btn">
+        <div id="btn_position">
+            <input type="submit" value="connecter" name="connecter" id="connexion_btn">
+        </div>
     </form>
 </body>
 </html>

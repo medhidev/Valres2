@@ -57,6 +57,10 @@ if(isset($_POST["connecter"])){
     else{
         echo sendError("Compte introuvable");
     }
+
+    if (isset($_POST["connecter"])){
+
+    }
 }
 
 /* Vue Login / Connexion  */
