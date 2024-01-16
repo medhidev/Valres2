@@ -1,11 +1,6 @@
 <?php
 
-session_start();
-include "$racine/model/bdd.inc.php";
-
-if ($_SERVER["SCRIPT_FILENAME"] == __FILE__) {
-    $racine = "..";
-}
+include "root.php";
 
 if ($_SESSION["permission"] == 4){
     /* Model Permission*/

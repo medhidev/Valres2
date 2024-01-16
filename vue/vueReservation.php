@@ -22,11 +22,11 @@
 
 			<input type="date" name="date_select">
 
-			<input type="submit" name="search" value="rechercher"
-			style="background-color: #08c252; border: none; padding: 5px; border-radius: 5px;"><br><br>
+			<input type="submit" name="search" id="search_filter" value="rechercher"><br><br>
 		</div>
+	</form>
 
-		<?php
+	<?php
 		// Résultat de recherche
 		if (isset($_POST["search"])){
 			echo "<div style='color: #26AB5D' id='search_result'>"."<strong>Resultat Recherche :</strong><br><br>";
@@ -40,11 +40,9 @@
 			else{
 				echo "Structure: ".$_POST["structure_select"]."<br>";
 			}
-			echo "Date: ".$_POST["date_select"]."</div>";
+			echo "Date: ".$_POST["date_select"]."</div><br>";
 		}
 		?>
-
-	</form>
 
 	<div id="tableau_reservation">
 		<table>

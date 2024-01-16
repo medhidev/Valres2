@@ -6,7 +6,6 @@
 
     <!-- Dependance -->
     <script src="https://kit.fontawesome.com/7aec2fa477.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="/Valres2/vue/css/root.css">
     <link rel="stylesheet" href="/Valres2/vue/css/connexion.css">
 
     <title>Connexion Valres</title>
@@ -23,6 +22,7 @@
 
         <span id="icon"><i class="fas fa-lock"></i></span>
         <input type="password" name="password" placeholder="mot de passe" size=30% required><br><br>
+        <a href="./?action=register" id="register_link">créer un compte</a><br>
 
         <div id="btn_position">
             <input type="submit" value="connecter" name="connecter" id="connexion_btn">

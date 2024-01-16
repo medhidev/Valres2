@@ -3,40 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="/Valres2/vue/css/valide_reservation.css">
     <title>Valider Reservation</title>
 </head>
-
-<style>
-	td, th{
-		border: 1px solid;
-		text-align: center;
-		padding: 8px;
-	}
-
-	th {
-		padding: 10px;padding-left: 20px;padding-right: 20px;
-	}
-
-    #etat_select{
-        padding-left: 10px;
-    }
-
-    /* Aligner les éléments */
-    #form_etat_select {
-      display: flex;
-      flex-direction: column;
-    }
-
-    label {
-      display: flex;
-      align-items: baseline;
-    }
-
-	#edit_reserv {
-		width: 100px;
-		padding: 10px;
-	}
-</style>
 
 <body>
 	<form action="#" method="post" id="form_etat_select">	

@@ -3,17 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Valres2/vue/css/creer_reservation.css">
     <title>Creer Reservation</title>
 </head>
-<style>
-    #form_reservSalle{
-        position: absolute;
-        padding: 20px;
-        border: solid 1px;
-        border-radius: 10px;
-        background-color: #D6E8FE;
-    }
-</style>
 <body>
     <form action="#" method="post" id="form_reservSalle">
 

@@ -1,0 +1,9 @@
+@import url("root.css");
+
+#form_reservSalle{
+    position: absolute;
+    padding: 20px;
+    border-radius: 10px;
+    color: var(--light-gray);
+    background-color: var(--gray-medium);
+}

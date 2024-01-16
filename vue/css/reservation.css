@@ -1,17 +1,5 @@
 @import url("root.css");
 
-/* td, th{
-    border: 1px solid;
-    text-align: center;
-    padding: 8px;
-}
-
-th {
-    padding: 10px;
-    padding-left: 20px;
-    padding-right: 20px;
-} */
-
 form{
     display: flex;
     justify-content: space-between;
@@ -19,9 +7,14 @@ form{
 }
 
 #search_bar{
-    padding-top: var(--bit2);
+    /* padding-top: var(--bit); */
+    display: flex;
+    justify-content: space-between;
 }
 
-/* #search_result{
-    padding-top: var(--medium);
-} */
+#search_filter{
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: var(--green);
+}

@@ -1,29 +1,4 @@
-:root{
-    /* PANNEL */
-    --dark-gray: #0D1B2B;
-    --gray-medium: #1C263D;
-    --cyan-gray: #435B7B;
-    --gray: #7C90AD;
-    --light-gray: #E6E7E4;
-
-    /* Couleurs Spéciales */
-    
-
-    /* Autres */
-    --police: 18px;
-
-    /* Taille */
-    --separe: 2px;
-    --bit: 10px;
-    --bit2: 20px;
-    --little-bit: 5%;
-    --little: 10%;
-    --medium: 20%;
-    --mid: 200px;
-    --huge: 50%;
-    --max: 100%;
-
-}
+@import url("variable.css");
 
 body{
     font-family: monospace;
@@ -60,8 +35,6 @@ select:focus, input:focus{
     outline: none;
 }
 
-/* NAVBAR */
-
 nav{
     position: fixed;
     top: 0;
@@ -74,6 +47,9 @@ nav{
     padding: 20px;
     justify-content: space-between;
     align-items: center;
+
+    margin-bottom: 30px;
+
 }
 
 .item_right{
@@ -81,12 +57,23 @@ nav{
     justify-content: flex-end;
 }
 
-/* TABLEAU */
-
-th{
-    background-color: var(--dark-gray); 
+td, th{
+    background-color: var(--light-gray);
+    /* border: 1px solid; */
+    text-align: center;
+    padding: 8px;
 }
 
-td{
-    background-color: var(--light-gray);
+th {
+    background-color: var(--gray);
+    padding: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+#green_btn{
+    background-color: #08c252;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
 }

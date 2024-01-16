@@ -15,8 +15,9 @@ function controleurPrincipal($action){
     // différentes connexion déconnexion
     $lesActions["login"] = "login.php";
     $lesActions["logout"] = "login.php";
+    $lesActions["register"] = "register.php";
 
-    // différentes pages tiers
+    // Pages pour tout les comptes
     $lesActions["reservation"] = "reservation.php";
     $lesActions["salle"] = "salle.php";
 
@@ -29,6 +30,7 @@ function controleurPrincipal($action){
 
     // Secretaire
     $lesActions["valide"] = "valide_reservation.php";
+    $lesActions["xml"] = "xml.php";
 
     // vérifie l'existance du chemain d'accès
     if (array_key_exists ( $action , $lesActions )){

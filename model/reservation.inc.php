@@ -153,9 +153,15 @@ function searchReservation ($categorie, $structure, $date){
     return $result;
 }
 
+// Créer une reservation
 function ajouterReserveration($id_user, $salle, $date, $periode){
     $result = true;
-    $etat = 2;
+
+    // Secretaire
+    if ($_SESSION["permission"] == 2)
+        $etat = 1;
+    else
+        $etat = 2;
 
     try {
         $connexion = connexionBDD();
@@ -178,6 +184,7 @@ function ajouterReserveration($id_user, $salle, $date, $periode){
     return $result;
 }
 
+// Vérifie une reservation
 function verifReservation($salle, $date, $periode){
     $result = true;
 
@@ -244,6 +251,7 @@ function supprimerReservation($ligne_suppr){
     return $result;
 }
 
+// Modifie une reservation (pas terminer)
 function getUpdateReservation($id_reserv, $id_etat){
     $result = false;
     try {

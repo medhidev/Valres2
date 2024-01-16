@@ -1,16 +1,9 @@
 <?php
 
-session_start();
-
-if ($_SERVER["SCRIPT_FILENAME"] == __FILE__) {
-    $racine = "..";
-}
-
-/* Model Login / Connexion */
-include "$racine/model/bdd.inc.php";
-include "$racine/model/message_system.inc.php";
+include "root.php";
 include "$racine/model/utilisateur.inc.php";
 
+//  Reset les valeur de session
 $_SESSION["id"] = null;
 $_SESSION["permission"] = null;
 $_SESSION["nom"] = null;

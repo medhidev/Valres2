@@ -1,16 +1,10 @@
 <?php
 
-session_start();
-
-if ($_SERVER["SCRIPT_FILENAME"] == __FILE__) {
-    $racine = "..";
-}
+include "root.php";
 
 if ($_SESSION["permission"] == 2){
+    
     /* Model Reservation */
-    // Import la méthode de connexion à la base de donnée
-    include "$racine/model/bdd.inc.php";
-
     // categories des salles
     include "$racine/model/categorie_salle.inc.php";
     $categorie_salle = getCategorie();

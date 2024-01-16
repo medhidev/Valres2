@@ -1,0 +1,27 @@
+:root{
+    /* PANNEL */
+    --dark-gray: #0D1B2B;
+    --gray-medium: #1C263D;
+    --cyan-gray: #435B7B;
+    --gray: #7C90AD;
+    --light-gray: #E6E7E4;
+
+    /* Couleurs Spéciales */
+    --green: #08c252;
+    --red: #fc3a41;
+
+    /* Autres */
+    --police: 18px;
+
+    /* Taille */
+    --separe: 2px;
+    --bit: 10px;
+    --bit2: 50px;
+    --little-bit: 5%;
+    --little: 10%;
+    --medium: 20%;
+    --mid: 200px;
+    --huge: 50%;
+    --max: 100%;
+
+}

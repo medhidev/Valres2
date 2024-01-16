@@ -1,0 +1,21 @@
+@import url("root");
+
+#etat_select{
+    padding-left: 10px;
+}
+
+/* Aligner les éléments */
+#form_etat_select {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  display: flex;
+  align-items: baseline;
+}
+
+#edit_reserv {
+    width: 100px;
+    padding: 10px;
+}
