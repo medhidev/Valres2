@@ -10,7 +10,7 @@ function connexionBDD(){
 
 	// Test de connexion
 	try {
-		$connexion = new PDO("mysql:host=$host;dbname=$bdd", $login, $password);
+		$connexion = new PDO("mysql:host=$host;dbname=$bdd;charset=utf8mb4", $login, $password);
 		return $connexion;
 
 	} catch(Exception $e) {

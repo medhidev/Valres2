@@ -7,11 +7,10 @@
     <link rel="stylesheet" href="../css/pop_up.css">
     <title>Gestion Utilisateurs</title>
 </head>
-<body>
-    <?php // include '../controller/liste_perm_user.php'; ?>
+<body>  
 
-    <?php // include '../model/modal.php';?>
-    
+    <!-- PARTIE ANIS -->
+
     <!-- jQuery (version 3.6.0) -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <!-- Popper.js (version 2.10.2) -->

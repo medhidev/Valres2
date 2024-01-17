@@ -13,7 +13,8 @@ function getReservation(){
         INNER JOIN periode p ON p.id_periode = r.id_periode
         INNER JOIN salle s ON s.id = r.salle_id;";
 
-        $request = $connexion->query($req_sql);
+        $request = $connexion->prepare($req_sql);
+        $request->execute();
         $row = $request->fetch();
 
         while ($row){
@@ -44,7 +45,8 @@ function dateEmpty($categorie, $structure){
         INNER JOIN salle s ON s.id = r.salle_id
         WHERE u.structure_nom = '".$structure."' AND s.categorie = ".$categorie.";";
 
-        $request = $connexion->query($req_sql);
+        $request = $connexion->prepare($req_sql);
+        $request->execute();
         $row = $request->fetch();
 
         while ($row){
@@ -74,7 +76,8 @@ function structureEmpty($categorie, $date){
         INNER JOIN salle s ON s.id = r.salle_id
         WHERE s.categorie = '".$categorie."' AND r.date = '".$date."';";
 
-        $request = $connexion->query($req_sql);
+        $request = $connexion->prepare($req_sql);
+        $request->execute();
         $row = $request->fetch();
 
         while ($row){
@@ -105,7 +108,8 @@ function getReservByCategorie($categorie){
         INNER JOIN salle s ON s.id = r.salle_id
         WHERE s.categorie = ".$categorie.";";
 
-        $request = $connexion->query($req_sql);
+        $request = $connexion->prepare($req_sql);
+        $request->execute();
         $row = $request->fetch();
 
         while ($row){
@@ -137,7 +141,8 @@ function searchReservation ($categorie, $structure, $date){
         INNER JOIN categorie_salle c ON c.id = s.categorie
         WHERE c.id = ".$categorie." AND r.date = '".$date."' AND u.structure_nom = '".$structure."';";
 
-        $request = $connexion->query($req_sql);
+        $request = $connexion->prepare($req_sql);
+        $request->execute();
         $row = $request->fetch();
 
         while ($row){
@@ -173,7 +178,8 @@ function ajouterReserveration($id_user, $salle, $date, $periode){
         $req_sql = "INSERT INTO reservation (`utilisateur_id`, `salle_id`, `date`, `id_periode`, `idEtat`) VALUES
         (".$id_user.", ".$salle.", '".$date."', ".$periode.", ".$etat.");";
 
-        $request = $connexion->query($req_sql);
+        $request = $connexion->prepare($req_sql);
+        $request->execute();
         $row = $request->fetch();
 
     } catch (Exception $e){
@@ -216,7 +222,8 @@ function getThisReservation(){
         $connexion = connexionBDD();
         $req_sql = "SELECT * FROM reservation WHERE utilisateur_id = ".$_SESSION["id"].";";
 
-        $request = $connexion->query($req_sql);
+        $request = $connexion->prepare($req_sql);
+        $request->execute();
         $row = $request->fetch();
 
         while ($row){
@@ -270,7 +277,8 @@ function getUpdateReservation($id_reserv, $id_etat){
         $connexion = connexionBDD();
         $req_sql = "UPDATE reservation SET idEtat = ".$id_etat." WHERE id = ".$id_reserv.";";
 
-        $request = $connexion->query($req_sql);
+        $request = $connexion->prepare($req_sql);
+        $request->execute();
         $result = true;
 
     } catch (Exception $e){

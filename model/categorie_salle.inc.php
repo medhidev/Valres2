@@ -6,7 +6,8 @@ function getCategorie(){
 
     try {
         $connexion = connexionBDD();
-        $request = $connexion->query("SELECT libelle FROM categorie_salle;");
+        $request = $connexion->prepare("SELECT libelle FROM categorie_salle;");
+        $request->execute();
         $row = $request->fetch();
 
         while ($row){

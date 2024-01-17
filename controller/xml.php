@@ -5,31 +5,52 @@ include "root.php";
 if ($_SESSION["permission"] == 2){
 
     /* Modele */
+    include "$racine/model/reservation.inc.php";
+
     if (isset($_POST["genere_xml"])){
-        // Créez un document XML
+
+        // Création d'un nouvel objet DOMDocument
         $doc = new DOMDocument('1.0', 'utf-8');
+        $doc->formatOutput = true;
 
-        // Créez la racine de votre document
-        $root = $doc->createElement('root');
-        $doc->appendChild($root);
+        // Ajout du commentaire
+        $comment = $doc->createComment("Généré le : ".date('D j M Y \à H:i'));
+        $doc->appendChild($comment);
 
-        // Ajout des éléments du document
-        // 
-        $element1 = $doc->createElement('element1', 'Valeur de l\'élément 1');
-        $root->appendChild($element1);
+        // Création de l'élément racine <reservations>
+        $reservations = $doc->createElement('reservations');
+        $doc->appendChild($reservations);
 
-        $element2 = $doc->createElement('element2', 'Valeur de l\'élément 2');
-        $root->appendChild($element2);
+        // Tableau des réservations
+        $reservationsData = getReservation();
 
-        // Créez le fichier XML
-        $doc->formatOutput = true; // pour formater le fichier XML de manière lisible
-        $xmlString = $doc->saveXML();
+        // Ajout des réservations
+        foreach ($reservationsData as $reservationData) {
+            $reservation = $doc->createElement('reservation');
+            $reservation->setAttribute('id_reserv', $reservationData['id_reserv']);
 
-        // Enregistrez le fichier XML dans un fichier
-        header('Content-Type: text/xml');
-        header('Content-Disposition: attachment; filename="liste_utilisateur.xml"');
+            // Ajoute tout les éléments enfants dans le document
+            foreach ($reservationData as $key => $value) {
+                if ($key != 'id_reserv' && is_string($key)) {
+                    $value = htmlspecialchars($value, ENT_XML1, 'UTF-8');
+                    $element = $doc->createElement($key, $value);
+                    $reservation->appendChild($element);
+                }
+            }
 
-        echo sendValide("Fichier XML généré avec succès");
+            $reservations->appendChild($reservation);
+        }
+
+        // Sauvegarde du document XML dans un fichier (Télécharger)
+        $doc->save('reservations.xml');
+
+        header('Content-Type: application/xml');
+        header('Content-Disposition: attachment; filename="reservations.xml"');
+        readfile('reservations.xml');
+        exit;
+
+        echo sendValide('Fichier XML généré avec succès');
+
     }
 
     /* Vue */

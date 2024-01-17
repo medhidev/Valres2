@@ -7,7 +7,8 @@ function getEtat(){
         $connexion = connexionBDD();
         $req_sql = " SELECT * FROM etat;";
 
-        $request = $connexion->query($req_sql);
+        $request = $connexion->prepare($req_sql);
+        $request->execute();
         $row = $request->fetch();
 
         while ($row){
@@ -31,7 +32,8 @@ function updateEtat(){
         $connexion = connexionBDD();
         $req_sql = " SELECT * FROM etat;";
 
-        $request = $connexion->query($req_sql);
+        $request = $connexion->prepare($req_sql);
+        $request->execute();
         $row = $request->fetch();
 
         while ($row){

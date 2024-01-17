@@ -46,7 +46,6 @@
 						<td><?= $reservation[$i]["structure"]; ?></td>
 						<td><?= "<strong>".$reservation[$i]["etat"]."</strong>"; ?></td>
 						<td>
-							<!-- Pas réussis liste totalement dynamique -->
 							<select name=<?= "etat_select".$i+1; ?>>
 								<optgroup label="Etat réservation"></optgroup>
 								<option value="1" ><?= $etat[0]["libelle"]; ?></option>

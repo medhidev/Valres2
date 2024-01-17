@@ -9,7 +9,7 @@
 <body>
     <form action="#" method="post" id="form_reservSalle">
 
-        <h3>Réserver une Salle</h3>
+        <h3>Faire une Reservation</h3>
 
         <!-- Selectionner la salle -->
 		<select name="salle_select" required>
@@ -30,7 +30,7 @@
 			<?php } ?>
 		</select><br><br>
 
-        <input type="submit" value="Créer" name="add_reserv" style="background-color: #08c252; border: none; padding: 10px; border-radius: 5px;">
+        <input type="submit" value="Créer" name="add_reserv" id="green_btn">
     </form>
 </body>
 </html>

@@ -10,7 +10,8 @@ function getSalleAndCategorie(){
         FROM salle s
         INNER JOIN categorie_salle c ON c.id = s.categorie";
 
-        $request = $connexion->query($req_sql);
+        $request = $connexion->prepare($req_sql);
+        $request->execute();
         $row = $request->fetch();
 
         while ($row){
@@ -34,7 +35,8 @@ function getSalle(){
         $connexion = connexionBDD();
         $req_sql = " SELECT salle_nom FROM salle;";
 
-        $request = $connexion->query($req_sql);
+        $request = $connexion->prepare($req_sql);
+        $request->execute();
         $row = $request->fetch();
 
         while ($row){

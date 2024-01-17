@@ -1,23 +1,16 @@
 <!-- CSS -->
 <!-- Toutes les pages -->
-- régler le problème du margin
-- couleurs tableau (titre)
-- repositionner les résultat de recherche
 - déconnexion tout à droite
-
-<!-- Responsable -->
-- couleurs forms
-
-<!-- Admin -->
+- Admin autoriser dans le droit aux reservations
 - Refaire la Nav (police)
+- implementer les fonctionnalité d'anis dans la page Admin
+
 
 <!-- Features -->
-- Admin autoriser dans le droit aux reservations
-- implementer les fonctionnalité d'anis dans la page Admin
-- régler la suppression des reservations
+
 - en sécurité ajouter les requête préparer
-(prepare, bindValue voir tp ou doc php)
-- Ajouter un champ de date pour supprimer les reservations.
+
 - Finaliser le tableau de validation des reservations
+
 - Améliorer la recherche des salles (date categorie de salle)
-- Générer un fichier XML
+- Ajouter l'etat de la salle

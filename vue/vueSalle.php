@@ -9,7 +9,7 @@
 <body>
     <table id="salle">
 		<thead >
-			<th colspan="6">Salles de Valres</th>
+			<th colspan="3">Salles de Valres</th>
 		</thead>
 		<tbody>
 			<!-- Liste dynamique -->

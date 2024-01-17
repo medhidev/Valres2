@@ -7,7 +7,7 @@ if ($_SERVER["SCRIPT_FILENAME"] == __FILE__) {
 ?>
 
 <!-- NAV BAR -->
-<link rel="stylesheet" href="/Valres2/vue/css/root.css">
+<!-- <link rel="stylesheet" href="/Valres2/vue/css/root.css"> -->
 
 <?php
 if ($_SESSION["permission"] == null && $_SESSION["id"] == null){}
@@ -32,6 +32,7 @@ else { ?>
 		<?php if ($_SESSION["permission"] == 3){ ?>
 			<li><?= "Responsable: <strong>".$_SESSION["nom"]."</strong>"; ?></li>
 			<li><a href="./?action=creer">Créer</a></li>
+			<li><a href="./?action=suppr">Supprimer</a></li>
 			<li><a href="./?action=reservation">Reservations</a></li>
 		<?php } ?>
 
@@ -47,5 +48,5 @@ else { ?>
 	</nav>
 <?php } ?>
 
-<!-- trouver une autre solution ! (pas très propre) -->
+<!-- Permet d'espacer la nav -->
 <br><br><br><br>
