@@ -55,14 +55,11 @@
 							</select>
 						</td>
 					</tr>
-				<?php
-					// $y++;
-				} ?>
-				<?php  ?>
+				<?php } ?>
 			</tbody>
 		</table><br>
 
-		<input type="submit" name="edit_reserv" id="edit_reserv" value="Enregister" style="background-color: #08c252; border: none; padding: 10px; border-radius: 5px;">
+		<input type="submit" name="edit_reserv" id="green_btn" value="Enregister" style="margin-right: 90%;">
 					
 	</form>
 </body>

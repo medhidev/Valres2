@@ -4,7 +4,6 @@ include "root.php";
 
 if ($_SESSION["permission"] == 4){
     /* Model Permission*/
-    include "$racine/model/message_system.inc.php";
     include "$racine/model/utilisateur.inc.php";
 
     $users = getUsersWithPermissions();

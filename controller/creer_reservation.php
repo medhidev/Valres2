@@ -16,15 +16,25 @@ if ($_SESSION["permission"] == 3 || $_SESSION["permission"] == 2){
     // Vérifie la validation du formulaire
     if (isset($_POST["add_reserv"])){
 
-        // ajoute une reservation
-        if (ajouterReserveration($_SESSION["id"], $_POST["salle_select"], $_POST["date_select"], $_POST["periode_select"])){
-            echo sendValide("Creation de la reservation avec succès");
-        }
+        $salle = $_POST["salle_select"];
+        $date = $_POST["date_select"];
+        $periode = $_POST["periode_select"];
         
-        else {
-            echo sendError("Creation de la reservation Invalide");
+        // vérifie que la réservation n'a pas été déjà créer
+        if (verifReservation($salle, $date, $periode)){ // méthode ne fonctionne pas !
+
+            // ajoute une reservation
+            if (ajouterReserveration($_SESSION["id"], $salle, $date, $periode)){
+                // echo sendValide("Creation de la reservation avec succès"); (marche pas)
+                header("Location: ./?action=valide");
+            }
+
+            else
+                echo sendError("Problème de création de la requête");
         }
 
+        else
+            echo sendError("La reservation entrée est invalide");
     }
 
     /* Vue creation Reservation */

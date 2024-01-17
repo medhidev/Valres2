@@ -6,6 +6,7 @@
 
     <!-- Dependance -->
     <script src="https://kit.fontawesome.com/7aec2fa477.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/Valres2/vue/css/root.css">
     <link rel="stylesheet" href="/Valres2/vue/css/connexion.css">
 
     <title>Connexion Valres</title>
@@ -48,7 +49,7 @@
         <a href="./?action=login">Retour Acceuil</a>
 
         <div id="btn_position">
-            <input type="submit" value="s'enregistrer" name="register" id="register_btn">
+            <input type="submit" value="s'enregistrer" name="register" id="green_btn">
         </div>
     </form>
 </body>

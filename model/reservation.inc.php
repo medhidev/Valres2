@@ -185,6 +185,8 @@ function ajouterReserveration($id_user, $salle, $date, $periode){
 }
 
 // Vérifie une reservation
+// Si trouve la reservation -> true
+// Sinon false
 function verifReservation($salle, $date, $periode){
     $result = true;
 
@@ -192,17 +194,15 @@ function verifReservation($salle, $date, $periode){
         $connexion = connexionBDD();
         $req_sql = "SELECT * FROM reservation
         WHERE salle_id = ".$salle." AND date = '".$date."' AND id_periode = ".$periode.";";
+        echo $req_sql;
 
-        $request = $connexion->query($req_sql);
+        $request = $connexion->prepare($req_sql);
+        $request->execute();
         $row = $request->fetch();
 
     } catch (Exception $e){
         $result = false;
         die("Erreur: ".$e->getMessage());
-    }
-
-    if ($row == null){
-        $result = false;
     }
 
     return $result;
@@ -269,5 +269,4 @@ function getUpdateReservation($id_reserv, $id_etat){
     // renvoie la liste des reservations
     return $result;
 }
-
 ?>

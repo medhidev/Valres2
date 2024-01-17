@@ -9,9 +9,12 @@
 <body>
     <form action="#" method="post" id="form_reservSalle">
 
-        <h3>Fichier XML</h3>
-        liste des utilisateurs du <?= date("d/m/Y"); ?><br><br>
-        <input type="submit" value="Générer XML" name="genere_xml" id="green_btn">
-    </form>
+        <h3>Fichiers XML</h3>
+        liste comptes du <?= date("d/m/Y"); ?>
+        <input type="submit" value="Générer XML" name="genere_xml_compte" id="green_btn"><br><br>
+
+        liste reservations du <?= date("d/m/Y"); ?>
+        <input type="submit" value="Générer XML" name="genere_xml_reservation" id="green_btn"><br><br>
+    </form><br>
 </body>
 </html>

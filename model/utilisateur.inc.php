@@ -81,11 +81,22 @@ function creerUser($nom, $prenom, $id_structure, $nom_structure, $adresse_struct
     try {
         $connexion = connexionBDD();
         $req_sql = "INSERT INTO utilisateur (`nom`, `prenom`, `structure_id`, `structure_nom`, `structure_adresse`, `mail`, `id_perm`, `mdp`) VALUES
-        ('$nom', '$prenom', ".$id_structure.", '$nom_structure', '$adresse_structure', '$mail', ".$id_perm.", '$password');";
+        (:nom, :prenom, :id_structure, :nom_structure, :adresse, :mail, :id_perm, :mdp);";
 
-        $request = $connexion->query($req_sql);
+        $request = $connexion->prepare($req_sql);
+
+        // Vérification des champs
+        $request->bindValue(':nom', $nom, PDO::PARAM_STR);
+        $request->bindValue(':prenom', $prenom, PDO::PARAM_STR);
+        $request->bindValue(':id_structure', $id_structure, PDO::PARAM_INT);
+        $request->bindValue(':nom_structure', $nom_structure, PDO::PARAM_STR);
+        $request->bindValue(':adresse', $adresse_structure, PDO::PARAM_STR);
+        $request->bindValue(':mail', $mail, PDO::PARAM_STR);
+        $request->bindValue(':id_perm', $id_perm, PDO::PARAM_INT);
+        $request->bindValue(':mdp', $password, PDO::PARAM_STR);
+
         $request->execute();
-        $row = $request->fetch();
+        $row = $request->fetchAll();
 
     } catch (Exception $e){
         $result = false;

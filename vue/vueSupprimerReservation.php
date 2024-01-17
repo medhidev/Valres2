@@ -3,21 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/Valres2/vue/css/root.css">
+    <link rel="stylesheet" href="/Valres2/vue/css/creer_reservation.css">
     <title>Supprimer Reservation</title>
 </head>
-<style>
-    #form_reservSalle{
-        position: absolute;
-        padding: 20px;
-        border: solid 1px;
-        border-radius: 10px;
-        background-color: #D6E8FE;
-    }
-
-    #liste_reservation {
-        width: 280px;
-    }
-</style>
 <body>
     <form action="#" method="post" id="form_reservSalle">
 
@@ -36,7 +25,7 @@
 			<?php } ?>
 		</select><br><br>
 
-        <input type="submit" value="Supprimer" name="suppr_reserv" style="background-color: #fc3a41; border: none; padding: 10px; border-radius: 5px;">
+        <input type="submit" value="Supprimer" name="suppr_reserv" id="red_btn">
     </form>
 </body>
 </html>
