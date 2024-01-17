@@ -81,7 +81,8 @@ CREATE TABLE IF NOT EXISTS `reservation` (
   KEY `contrainteUtilisateurId` (`utilisateur_id`),
   KEY `contrainteSalleId` (`salle_id`),
   KEY `contrainteEtatId` (`idEtat`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 AUTO_INCREMENT=1;
+
 
 --
 -- Structure de la table `salle`
@@ -125,7 +126,7 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
   PRIMARY KEY (`utilisateur_id`),
   KEY `contrainteStructureId` (`structure_id`),
   KEY `id_perm` (`id_perm`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci COMMENT='utilisateurs ';
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci COMMENT='utilisateurs' AUTO_INCREMENT=1;
 
 --
 -- Contraintes pour la table `reservation`
@@ -135,6 +136,7 @@ ALTER TABLE `reservation`
   ADD CONSTRAINT `contrainteSalleId` FOREIGN KEY (`salle_id`) REFERENCES `salle` (`id`),
   ADD CONSTRAINT `contrainteUtilisateurId` FOREIGN KEY (`utilisateur_id`) REFERENCES `utilisateur` (`utilisateur_id`),
   ADD CONSTRAINT `contraintePeriode` FOREIGN KEY (`id_periode`) REFERENCES `periode` (`id_periode`);
+  
 
 --
 -- Contraintes pour la table `salle`

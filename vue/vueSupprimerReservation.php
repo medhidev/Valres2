@@ -10,21 +10,28 @@
 <body>
     <form action="#" method="post" id="form_reservSalle">
 
-        <h3>Supprimer une Reservation</h3>
+        <h3>Supprimer ma Reservation</h3>
 
         <!-- Selectionner la salle -->
-		<select name="reservation_select" id="liste_reservation" multiple required>
-			<optgroup label="Liste des Reservation effectués"></optgroup>
-			<?php for ($i = 0; $i < count($reservation); $i++) { ?>
-                <option value='<?= $i+1; ?>'>
-                <?php
-                    $date = new DateTime($reservation[$i]["date"]);
-                    echo "Reservation ".($i+1)." - ".$date->format("d/m/Y");
-                ?>
-            </option>
+		<select name="salle_select" id="liste_reservation" required>
+			<optgroup label="Nom Salle"></optgroup>
+			<?php for ($i = 0; $i < count($salle); $i++) { ?>
+                <option value='<?= $i+1; ?>'><?= $salle[$i]["salle_nom"]; ?></option>
+			<?php } ?>
+		</select>
+
+        <!-- Selectionner la période -->
+        <select name="periode_select" id="liste_reservation" required>
+			<optgroup label="Période"></optgroup>
+			<?php for ($i = 0; $i < count($periode); $i++) { ?>
+                <option value='<?= $i+1; ?>'><?= $periode[$i]["libelle"]; ?></option>
 			<?php } ?>
 		</select><br><br>
 
+        <!-- Selectionner la date -->
+        <input type="date" name="date_select" required><br><br>
+
+        <!-- Supprimer -->
         <input type="submit" value="Supprimer" name="suppr_reserv" id="red_btn">
     </form>
 </body>

@@ -6,10 +6,16 @@ include "root.php";
 if ($_SESSION["permission"] == 3 || $_SESSION["permission"] == 2){
     /* Model creation Reservation */
     include "$racine/model/reservation.inc.php";
+    include "$racine/model/salle.inc.php";
+    include "$racine/model/periode.inc.php";
+
+    $periode = getPeriode();
+    $salle = getSalle();
 
     if (empty(getThisReservation())){
         echo sendWarn("Aucun reservation trouvée :(");
     }
+    // Liste des reservation effectué par le compte
     else
         $reservation = getThisReservation();
 
@@ -17,11 +23,11 @@ if ($_SESSION["permission"] == 3 || $_SESSION["permission"] == 2){
     if (isset($_POST["suppr_reserv"])){
 
         // Si la reservation c'est bien supprimer on affiche un succès
-        if (supprimerReservation($_POST["reservation_select"])){
+        if (supprimerReservation($_POST["salle_select"], $_POST["date_select"], $_POST["periode_select"])){
             echo sendValide("Suppression de la reservation avec succès");
         }
         else {
-            echo sendError("Creation de la reservation Invalide");
+            echo sendError("Suppression de la reservation Impossible");
         }
     }
 

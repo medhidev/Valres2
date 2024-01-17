@@ -46,7 +46,7 @@
         <span id="icon"><i class="fas fa-lock"></i></span>
         <input type="password" name="password" placeholder="mot de passe" size=46% required><br><br>
 
-        <a href="./?action=login">Retour Acceuil</a>
+        <a href="./?action=login">Retour Accueil</a>
 
         <div id="btn_position">
             <input type="submit" value="s'enregistrer" name="register" id="green_btn">

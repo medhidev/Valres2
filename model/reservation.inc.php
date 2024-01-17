@@ -232,16 +232,28 @@ function getThisReservation(){
     return $result;
 }
 
-// Supprime les reservations en fonction de la ligne du tableau
-function supprimerReservation($ligne_suppr){
+// Supprime une reservation
+function supprimerReservation($id_salle, $date, $id_periode){
     $result = true;
 
     try {
         $connexion = connexionBDD();
-        $req_sql = "DELETE FROM reservation
-        WHERE utilisateur_id = ".$_SESSION["id"].";";
 
-        $request = $connexion->query($req_sql);
+        // Si l'utilisateur est secretaire -> change l'etat en valide
+        if($_SESSION["id"] == 2)
+            $etat = 1;
+
+        $req_sql = "DELETE FROM reservation WHERE salle_id = :salle AND date = :date AND id_periode = :periode";
+
+        $request = $connexion->prepare($req_sql);
+
+        // Vérification des champs
+        $request->bindValue(':salle', $id_salle, PDO::PARAM_INT);
+        $request->bindValue(':date', $date, PDO::PARAM_STR);
+        $request->bindValue(':periode', $id_periode, PDO::PARAM_INT);
+
+        $request->execute();
+        $row = $request->fetch();
 
     } catch (Exception $e){
         $result = false;

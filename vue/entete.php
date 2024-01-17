@@ -32,7 +32,6 @@ else { ?>
 		<?php if ($_SESSION["permission"] == 3){ ?>
 			<li><?= "Responsable: <strong>".$_SESSION["nom"]."</strong>"; ?></li>
 			<li><a href="./?action=creer">Créer</a></li>
-			<li><a href="./?action=suppr">Supprimer</a></li>
 			<li><a href="./?action=reservation">Reservations</a></li>
 		<?php } ?>
 
@@ -47,4 +46,6 @@ else { ?>
 		<li><a href="./?action=logout">Deconnexion</a></li>
 	</nav>
 <?php } ?>
-<br><br>
+
+<!-- trouver une autre solution ! (pas très propre) -->
+<br><br><br><br>

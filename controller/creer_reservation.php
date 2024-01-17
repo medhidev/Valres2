@@ -25,8 +25,11 @@ if ($_SESSION["permission"] == 3 || $_SESSION["permission"] == 2){
 
             // ajoute une reservation
             if (ajouterReserveration($_SESSION["id"], $salle, $date, $periode)){
-                // echo sendValide("Creation de la reservation avec succès"); (marche pas)
-                header("Location: ./?action=valide");
+                // Si secretaire
+                if ($_SESSION["permission"] == 2)
+                    header("Location: ./?action=valide");
+                else
+                    header("Location: ./?action=reservation");
             }
 
             else
