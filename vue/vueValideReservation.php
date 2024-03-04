@@ -34,24 +34,45 @@
 				</tr>
 
 				<?php
-				$y=0;
 				for ($i = 0; $i < count($reservation); $i++) { ?>
 					<tr>
 						<td><?= $reservation[$i]["periode"]; ?></td>
-						<td><?= $reservation[$i]["salle_nom"]; ?></td>
-						<td><?php
-						$date = new DateTime($reservation[$i]["date"]);
-						echo $date->format("d/m/Y");
-						?></td>
+						<td name="salle <?=$i?>"><?= $reservation[$i]["salle_nom"]; ?></td>
+						<td>
+							<?php
+							$date = new DateTime($reservation[$i]["date"]);
+							echo $date->format("d/m/Y");
+							?>
+						</td>
 						<td><?= $reservation[$i]["structure"]; ?></td>
 						<td><?= "<strong>".$reservation[$i]["etat"]."</strong>"; ?></td>
 						<td>
-							<select name=<?= "etat_select".$i+1; ?>>
+							<!-- <select name=<?= "etat_select[".$reservation[$i]["id_reserv"]."]"; ?>> -->
+							<select name="etat_select <?= $i ?>">
 								<optgroup label="Etat réservation"></optgroup>
 								<option value="1" ><?= $etat[0]["libelle"]; ?></option>
 								<option value="2" selected><?= $etat[1]["libelle"]; ?></option>
 								<option value="3" ><?= $etat[2]["libelle"]; ?></option>
 							</select>
+
+							<!-- <fieldset>
+								<legend>Etat reservation</legend>
+								<label>
+									<input type="radio"
+									name=<?= "etat_select[".$reservation[$i]["id_reserv"]."]"; ?>
+									value="1"><?= $etat[0]["libelle"]?>
+								</label>
+								<label>
+									<input type="radio"
+									name=<?= "etat_select[".$reservation[$i]["id_reserv"]."]"; ?>
+									value="2" checked><?= $etat[1]["libelle"]?>
+								</label>
+								<label>
+									<input type="radio"
+									name=<?= "etat_select[".$reservation[$i]["id_reserv"]."]"; ?>
+									value="3"><?= $etat[2]["libelle"]?>
+								</label>
+							</fieldset> -->
 						</td>
 					</tr>
 				<?php } ?>

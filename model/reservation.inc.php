@@ -6,7 +6,7 @@ function getReservation(){
 
     try {
         $connexion = connexionBDD();
-        $req_sql = " SELECT p.libelle AS periode, r.id AS id_reserv, s.salle_nom, r.date, u.structure_nom AS structure, e.libelle AS etat
+        $req_sql = " SELECT p.libelle AS periode, r.id AS id_reserv, s.salle_nom, r.date, u.structure_nom AS structure, r.idEtat AS idEtat, e.libelle AS etat
         FROM reservation r
         INNER JOIN etat e ON r.idEtat = e.idEtat
         INNER JOIN utilisateur u ON u.utilisateur_id = r.utilisateur_id
@@ -193,16 +193,29 @@ function ajouterReserveration($id_user, $salle, $date, $periode){
 // Vérifie une reservation
 // Si trouve la reservation -> true
 // Sinon false
-function verifReservation($salle, $date, $periode){
+function verifReservation($salle, $date, $periode, $structure){
     $result = true;
 
     try {
         $connexion = connexionBDD();
-        $req_sql = "SELECT * FROM reservation
-        WHERE salle_id = ".$salle." AND date = '".$date."' AND id_periode = ".$periode.";";
+        $req_sql = "SELECT r.salle_id AS salle_id, r.date AS date, r.id_periode AS periode_id, u.structure_nom AS structure
+        FROM reservation r
+        INNER JOIN utisateur u ON u.utilisateur_id = r.utilisateur_id
+        WHERE r.salle_id = :salle
+        AND r.date = :date
+        AND r.id_periode = :periode
+        AND u.structure_nom = :structure";
+
         echo $req_sql;
 
         $request = $connexion->prepare($req_sql);
+
+        // Paramètres
+        $request->bindValue("salle", $salle, PDO::PARAM_INT);
+        $request->bindValue("date", $date, PDO::PARAM_STR);
+        $request->bindValue("periode", $periode, PDO::PARAM_INT);
+        $request->bindValue("structure", $structure, PDO::PARAM_STR);
+
         $request->execute();
         $row = $request->fetch();
 
@@ -270,7 +283,7 @@ function supprimerReservation($id_salle, $date, $id_periode){
     return $result;
 }
 
-// Modifie une reservation (pas terminer)
+// Modifie une reservation
 function getUpdateReservation($id_reserv, $id_etat){
     $result = false;
     try {

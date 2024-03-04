@@ -53,4 +53,28 @@ function getSalle(){
     return $result;
 }
 
+function getSallewithID($salle){
+    // $result = array();
+
+    try {
+        $connexion = connexionBDD();
+        $req_sql = " SELECT id FROM salle WHERE salle_nom = :salle; ";
+
+        $request = $connexion->query($req_sql);
+        $request->bindValue("salle", $salle, PDO::PARAM_STR);
+        $row = $request->fetch();
+
+        // while ($row){
+        //     $result[] = $row;
+        //     $row = $request->fetch();
+        // }
+
+
+    } catch (Exception $e){
+        die("Erreur: ".$e->getMessage());
+    }
+
+    return $result;
+}
+
 ?>

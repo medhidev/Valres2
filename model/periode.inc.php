@@ -25,7 +25,7 @@ function getPeriode(){
 }
 
 function getPeriodewithID($periode){
-    $result = array();
+    // $result = array();
 
     try {
         $connexion = connexionBDD();
@@ -36,10 +36,10 @@ function getPeriodewithID($periode){
         $request = $connexion->query($req_sql);
         $row = $request->fetch();
 
-        while ($row){
-            $result[] = $row;
-            $row = $request->fetch();
-        }
+        // while ($row){
+        //     $result[] = $row;
+        //     $row = $request->fetch();
+        // }
 
 
     } catch (Exception $e){
