@@ -21,7 +21,7 @@ if ($_SESSION["permission"] == 3 || $_SESSION["permission"] == 2){
         $periode = $_POST["periode_select"];
         
         // vérifie que la réservation n'a pas été déjà créer
-        if (verifReservation($salle, $date, $periode)){ // méthode ne fonctionne pas !
+        if (verifReservation($salle, $date, $periode, $_SESSION["structure"])){ // méthode ne fonctionne pas !
 
             // ajoute une reservation
             if (ajouterReserveration($_SESSION["id"], $salle, $date, $periode)){

@@ -200,7 +200,7 @@ function verifReservation($salle, $date, $periode, $structure){
         $connexion = connexionBDD();
         $req_sql = "SELECT r.salle_id AS salle_id, r.date AS date, r.id_periode AS periode_id, u.structure_nom AS structure
         FROM reservation r
-        INNER JOIN utisateur u ON u.utilisateur_id = r.utilisateur_id
+        INNER JOIN utilisateur u ON u.utilisateur_id = r.utilisateur_id
         WHERE r.salle_id = :salle
         AND r.date = :date
         AND r.id_periode = :periode
