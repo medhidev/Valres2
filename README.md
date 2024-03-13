@@ -32,13 +32,13 @@ __source :__
 
 ---
 ### Repartition du travail (Cahier des Charges)
-##### Partie Administration (Tduki) :
+#### Partie Administration (Tduki) :
 * Gérer les accès : ajouter, supprimer, modifier l’accès pour une personne (Administrateur, secrétariat...)
 * Gérer la connexion et déconnexion des utilisateurs.
 * Consulter les réservations.
 * Générer le fichier xml des utilisateurs de début d’année.
 
-##### Partie Réservation (Medhi) :
+#### Partie Réservation (Medhi) :
 * Gérer les réservations : ajouter, supprimer une réservation.
 * Confirmer ou annuler les réservations. (Passage de l’état « Provisoire » à « Confirmé » ou
 « Annulé »)
@@ -53,16 +53,9 @@ Durant la construction de **Valres2** nous avons put prendre certaine initative 
 * Partage des fichiers sur Drive / Github
 
 ### Partie Technique
-##### Organisation
+#### Organisation
 Pour réaliser le site web de Valres, j'ai schématisé un plan de liaison de l'enssemble des pages en fonction du rôle de l'utilisateur.
 ![image de liaison des permission](doc/schema_io.png)
 
 Puis j'ai mit en place un tableau de test qui permet de vérifier que les fonctionnalités du projet soit opérationnelle.
 ![image des test de validation du projet](doc/test_validation.png)
-
-##### Explication MVC
-Durant la réalisation de ce projet nous avons eut l'occasion d'utiliser nous avons utilisé la méthode MVC qui permet de structurer de la façon la plus conventionnel possible notre projet.
-
-* Model → Contient les script qui permettent la liaison vers la BDD
-* View → Permet de gérer tout la partie Front *(Affichage du site web)*
-* Controller → Comme son nom l'indique controle / vérifier que les *données* entrées peuvent correctement être exploitées
