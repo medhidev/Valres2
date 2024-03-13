@@ -1,14 +1,14 @@
-# Valres2
+# Mission 2 – Site web de réservation de salles
+
+### Presentation du projet
+L'application web de réservations de salles n’est plus satisfaisante, car elle ne respecte pas les critères de sécurité imposés aujourd’hui. On vous demande de refaire celle-ci. Le déploiement de cette nouvelle version doit être précédé d'une validation de l'application.
+
+Ce projet est donc une continuité du projet valres de base qui permet la gestion des reservations des clients M2L. Pour ce faire nous avons mit en place un site internet où les utilisateurs en fonction de leur statut auront des accès variés.
 
 ### Outils utilisé
 * Hebergement local du site: [WampServer](https://www.wampserver.com/)
 * Organisation / Plannification / Cahier des Charges: [Drive](https://drive.google.com/) et [Tuleap Campus](https://tuleap-campus.org/)
 * IDE (Environnement de Developpement): [Visual Studio Code](https://code.visualstudio.com/)
-
-
-### Presentation du projet
-Ce projet est une continuité du projet valres de base qui permet la gestion des reservations des clients M2L.
-Pour ce faire nous avons mit en place un site internet où les utilisateurs en fonction de leur statut auront des accès variés.
 
 __Les grades:__
 * **Administrateur** : personne chargée de maintenir à jour les informations relatives aux
@@ -32,14 +32,13 @@ __source :__
 
 ---
 ### Repartition du travail (Cahier des Charges)
-__Partie Administration (Tduki) :__
-* Gérer les accès : ajouter, supprimer, modifier l’accès pour une personne (Administrateur,
-secrétariat...)
+##### Partie Administration (Tduki) :
+* Gérer les accès : ajouter, supprimer, modifier l’accès pour une personne (Administrateur, secrétariat...)
 * Gérer la connexion et déconnexion des utilisateurs.
 * Consulter les réservations.
 * Générer le fichier xml des utilisateurs de début d’année.
 
-__Partie Réservation (Medhi) :__
+##### Partie Réservation (Medhi) :
 * Gérer les réservations : ajouter, supprimer une réservation.
 * Confirmer ou annuler les réservations. (Passage de l’état « Provisoire » à « Confirmé » ou
 « Annulé »)
@@ -49,11 +48,19 @@ __Partie Réservation (Medhi) :__
 
 ### Base de projet
 Durant la construction de **Valres2** nous avons put prendre certaine initative tel que :
-* la modification de la Base de donnée, qui nous a permit de mieux optimiser et surtout répondre au besoin
-de gestion des droits ainsi que pour vérifier l'etat d'une reservation.
+* Modification de la Base de donnée
+* Ajout d'informations sur le tableau Kamban (Tuleap Campus)
+* Partage des fichiers sur Drive / Github
 
-![image des test de validation du projet](image/test_validation.png)
+### Partie Technique
+##### Organisation
+Pour réaliser le site web de Valres, j'ai schématisé un plan de liaison de l'enssemble des pages en fonction du rôle de l'utilisateur.
+![image de liaison des permission](doc/schema_io.png)
 
+Puis j'ai mit en place un tableau de test qui permet de vérifier que les fonctionnalités du projet soit opérationnelle.
+![image des test de validation du projet](doc/test_validation.png)
+
+##### Explication MVC
 Durant la réalisation de ce projet nous avons eut l'occasion d'utiliser nous avons utilisé la méthode MVC qui permet de structurer de la façon la plus conventionnel possible notre projet.
 
 * Model → Contient les script qui permettent la liaison vers la BDD
