@@ -14,3 +14,9 @@ label {
   display: flex;
   align-items: baseline;
 }
+
+
+/* Ne fonctionne pas ;( */
+/* .etat_btn {
+  background-color: blue;
+} */

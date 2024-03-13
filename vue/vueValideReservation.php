@@ -11,31 +11,23 @@
 	<form action="#" method="post" id="form_etat_select">	
 		<table id="reservations">
 			<thead >
-				<th colspan="6">Tableau des réservations en cours</th>
+				<th colspan="7">Tableau des réservations en cours</th>
 			</thead>
 			<tbody>
 				<!-- Liste dynamique -->
 				<tr>
-					<td>
-						<strong>Période</strong>
-					</td>
-					<td>
-						<strong>Salle</strong>
-					</td>
-					<td>
-						<strong>Date</strong>
-					</td>
-					<td>
-						<strong>Structure</strong>
-					</td>
-					<td colspan="2">
-						<strong>Etat</strong>
-					</td>
+					<td><strong>ID</strong></td>
+					<td><strong>Période</strong></td>
+					<td><strong>Salle</strong></td>
+					<td><strong>Date</strong></td>
+					<td><strong>Structure</strong></td>
+					<td colspan="2"><strong>Etat</strong></td>
 				</tr>
 
 				<?php
 				for ($i = 0; $i < count($reservation); $i++) { ?>
 					<tr>
+						<td><?= $reservation[$i]["id_reserv"]; ?></td>
 						<td><?= $reservation[$i]["periode"]; ?></td>
 						<td name="salle <?=$i?>"><?= $reservation[$i]["salle_nom"]; ?></td>
 						<td>
@@ -47,32 +39,9 @@
 						<td><?= $reservation[$i]["structure"]; ?></td>
 						<td><?= "<strong>".$reservation[$i]["etat"]."</strong>"; ?></td>
 						<td>
-							<!-- <select name=<?= "etat_select[".$reservation[$i]["id_reserv"]."]"; ?>> -->
-							<select name="etat_select <?= $i ?>">
-								<optgroup label="Etat réservation"></optgroup>
-								<option value="1" ><?= $etat[0]["libelle"]; ?></option>
-								<option value="2" selected><?= $etat[1]["libelle"]; ?></option>
-								<option value="3" ><?= $etat[2]["libelle"]; ?></option>
-							</select>
-
-							<!-- <fieldset>
-								<legend>Etat reservation</legend>
-								<label>
-									<input type="radio"
-									name=<?= "etat_select[".$reservation[$i]["id_reserv"]."]"; ?>
-									value="1"><?= $etat[0]["libelle"]?>
-								</label>
-								<label>
-									<input type="radio"
-									name=<?= "etat_select[".$reservation[$i]["id_reserv"]."]"; ?>
-									value="2" checked><?= $etat[1]["libelle"]?>
-								</label>
-								<label>
-									<input type="radio"
-									name=<?= "etat_select[".$reservation[$i]["id_reserv"]."]"; ?>
-									value="3"><?= $etat[2]["libelle"]?>
-								</label>
-							</fieldset> -->
+							<input type="radio" name="confirm_<?= $reservation[$i]["id_reserv"]; ?>"> <?= $etat[0]["libelle"]; ?>
+							<input type="radio" name="proviso_<?= $reservation[$i]["id_reserv"]; ?>"> <?= $etat[1]["libelle"]; ?>
+							<input type="radio" name="annuler_<?= $reservation[$i]["id_reserv"]; ?>"> <?= $etat[2]["libelle"]; ?>
 						</td>
 					</tr>
 				<?php } ?>

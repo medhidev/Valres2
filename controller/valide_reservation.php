@@ -19,22 +19,33 @@ if ($_SESSION["permission"] == 2){
 
     // Appuie sur le boutton Enregistrer
 	if (isset($_POST["edit_reserv"])){
-		// for ($i = 0; $i < count($reservation); $i++) {
-        //     getUpdateReservation($reservation[$i]["id_reserv"], $_POST[$etat_choisi]);
-        //     echo "id reservation: ".$reservation[$i]["id_reserv"]." etat select: ".$_POST[$etat_choisi];
-        // }
 
-        // foreach ($_POST['etat_select'] as $id_reserv => $id_etat) {
-        //     getUpdateReservation($id_reserv, $id_etat);
-        //     echo "id reservation: ".$id_reserv." etat select: ".$id_etat;
-        // }
+        foreach ($_POST as $key => $value) {
 
-        $salle = getSallewithID($reservation[$i]["salle_nom"]);
-        // $date = new DateTime($reservation[$i]["date"]);
-        // $date->format("d/m/Y");
+            $idReservation = substr($key, 8);
 
-        $periode = getPeriodewithID($reservation[$i]["periode"]); // nom periode
-        verifReservation($salle, $date, $periode, $_SESSION["structure"]);
+            // Si la secretaire Confirme la réservation
+            if (strpos($key, 'confirm_') === 0) {
+                // Changement de l'état de la réservation à "Confirmé"
+                getUpdateReservation($idReservation, 1); // 1 pour "Confirmé"
+            }
+
+            // Si la secretaire met la reservation en rovisoire
+            elseif (strpos($key, 'proviso_') === 0) {    
+                // Changement de l'état de la réservation à "Provisoire"
+                getUpdateReservation($idReservation, 2); // 2 pour "Provisoire"
+            }
+
+            // Si la secretaire Annule la réservation
+            elseif (strpos($key, 'annuler_') === 0) {    
+                // Changement de l'état de la réservation à "Annulé"
+                getUpdateReservation($idReservation, 3); // 3 pour "Annulé"
+            }
+        }
+
+        // refresh de l'affichage (pour que le tableau soit à jour)
+        header("Location: ./?action=valide");
+
 	}
 
     /* Vue Reservation */

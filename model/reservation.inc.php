@@ -288,9 +288,10 @@ function getUpdateReservation($id_reserv, $id_etat){
     $result = false;
     try {
         $connexion = connexionBDD();
-        $req_sql = "UPDATE reservation SET idEtat = ".$id_etat." WHERE id = ".$id_reserv.";";
-
+        $req_sql = "UPDATE reservation SET idEtat = :id_etat WHERE id = :id_reserv;";
         $request = $connexion->prepare($req_sql);
+        $request->bindValue("id_etat", $id_etat, PDO::PARAM_INT);
+        $request->bindValue("id_reserv", $id_reserv, PDO::PARAM_INT);
         $request->execute();
         $result = true;
 
