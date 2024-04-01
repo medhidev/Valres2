@@ -8,3 +8,6 @@ DROP TABLE categorie_salle;
 DROP TABLE utilisateur;
 DROP TABLE permissions;
 DROP TABLE structure;
+
+-- Ajout de la table Code pour projet Digicode
+DROP TABLE code;
