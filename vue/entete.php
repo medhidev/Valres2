@@ -6,9 +6,6 @@ if ($_SERVER["SCRIPT_FILENAME"] == __FILE__) {
 
 ?>
 
-<!-- NAV BAR -->
-<!-- <link rel="stylesheet" href="/Valres2/vue/css/root.css"> -->
-
 <?php
 if ($_SESSION["permission"] == null && $_SESSION["id"] == null){}
 else { ?>
@@ -33,13 +30,6 @@ else { ?>
 			<li><?= "Responsable: <strong>".$_SESSION["nom"]."</strong>"; ?></li>
 			<li><a href="./?action=creer">Créer</a></li>
 			<li><a href="./?action=suppr">Supprimer</a></li>
-			<li><a href="./?action=reservation">Reservations</a></li>
-		<?php } ?>
-
-		<!-- ADMIN -->
-		<?php if ($_SESSION["permission"] == 4){ ?>
-			<li><?= "Administrateur: <strong>".$_SESSION["nom"]."</strong>"; ?></li>
-			<li><a href="./?action=permission">Permissions</a></li>
 			<li><a href="./?action=reservation">Reservations</a></li>
 		<?php } ?>
 

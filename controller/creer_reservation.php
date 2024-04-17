@@ -44,6 +44,8 @@ if ($_SESSION["permission"] == 3 || $_SESSION["permission"] == 2){
     include "$racine/vue/entete.php";
     include "$racine/vue/vueCreerReservation.php";
 }
+
+// Retour à la page d'acceuil
 else{
     header("Location: ./?action=login");
 }

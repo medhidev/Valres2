@@ -64,12 +64,6 @@ function getSallewithID($salle){
         $request->bindValue("salle", $salle, PDO::PARAM_STR);
         $row = $request->fetch();
 
-        // while ($row){
-        //     $result[] = $row;
-        //     $row = $request->fetch();
-        // }
-
-
     } catch (Exception $e){
         die("Erreur: ".$e->getMessage());
     }

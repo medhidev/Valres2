@@ -1,4 +1,5 @@
 -- Jeux de données
+
 -- Categorie Salle
 INSERT INTO `categorie_salle` (`libelle`) VALUES
 ('Réunion'),
@@ -70,10 +71,4 @@ INSERT INTO `reservation` (`utilisateur_id`, `salle_id`, `date`, `id_periode`, `
 (5, 4, '2026-03-01 00:00:00', 2, 2),
 (2, 4, '2023-06-07 00:00:00', 2, 2),
 (1, 4, '2012-05-10 00:00:00', 2, 2);
-
--- Code
-INSERT INTO `code` (`digicode`, `wifi_key`) VALUES
-(5623, 'S1R22AsZbvj1Mo56'),
-(5926, 'v3qQ190mP2fDHOR1'),
-(3215, '73n4tZfXMM54L622');
 

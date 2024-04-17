@@ -12,7 +12,7 @@ function controleurPrincipal($action){
     $lesActions = array();
     $lesActions["defaut"] = "login.php";
 
-    // différentes connexion déconnexion
+    // différentes connexion / déconnexion
     $lesActions["login"] = "login.php";
     $lesActions["logout"] = "login.php";
     $lesActions["register"] = "register.php";
@@ -20,9 +20,6 @@ function controleurPrincipal($action){
     // Pages pour tout les comptes
     $lesActions["reservation"] = "reservation.php";
     $lesActions["salle"] = "salle.php";
-
-    // Administrateur
-    $lesActions["permission"] = "edit_perm.php";
 
     // Responsable
     $lesActions["creer"] = "creer_reservation.php";

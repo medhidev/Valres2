@@ -129,18 +129,6 @@ CREATE TABLE IF NOT EXISTS `utilisateur` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci COMMENT='utilisateurs' AUTO_INCREMENT=1;
 
 --
--- Structure de la table `code`
---
-
-DROP TABLE IF EXISTS `code`;
-CREATE TABLE IF NOT EXISTS `code` (
-  `id_salle` int NOT NULL AUTO_INCREMENT,
-  `digicode` int DEFAULT NULL,
-  `wifi_key` varchar(16), -- Max Size WIFI KEY
-  KEY `contrainteSalleId` (`id_salle`)
-)ENGINE=InnoDB DEFAULT AUTO_INCREMENT=1;
-
---
 -- Contraintes pour la table `reservation`
 --
 ALTER TABLE `reservation`
@@ -162,9 +150,3 @@ ALTER TABLE `utilisateur`
   ADD CONSTRAINT `contrainteStructureId` FOREIGN KEY (`structure_id`) REFERENCES `structure` (`id`),
   ADD CONSTRAINT `utilisateur_ibfk_1` FOREIGN KEY (`id_perm`) REFERENCES `permissions` (`id_perm`);
 COMMIT;
-
---
--- Contraintes pour la table `code`
---
-ALTER TABLE `code`
-  ADD CONSTRAINT `contrainteSalleId` FOREIGN KEY (`id_salle`) REFERENCES `salle` (`id`);
