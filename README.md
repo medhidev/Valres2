@@ -59,3 +59,60 @@ Pour réaliser le site web de Valres, j'ai schématisé un plan de liaison de l'
 
 Puis j'ai mit en place un tableau de test qui permet de vérifier que les fonctionnalités du projet soit opérationnelle.
 ![image des test de validation du projet](doc/test_validation.png)
+
+#### Arborescence
+
+```
+Valres2
+├─ bdd
+│  ├─ insert_mdll.sql
+│  ├─ mdll.sql
+│  └─ remove_mdll.sql
+├─ controller
+│  ├─ controllerPrincipal.php
+│  ├─ creer_reservation.php
+│  ├─ login.php
+│  ├─ register.php
+│  ├─ reservation.php
+│  ├─ root.php
+│  ├─ salle.php
+│  ├─ suppr_reservation.php
+│  ├─ valide_reservation.php
+│  └─ xml.php
+├─ doc
+│  ├─ schema_io.png
+│  └─ test_validation.png
+├─ getRacine.php
+├─ index.php
+├─ model
+│  ├─ bdd.inc.php
+│  ├─ categorie_salle.inc.php
+│  ├─ etat.inc.php
+│  ├─ message_system.inc.php
+│  ├─ periode.inc.php
+│  ├─ reservation.inc.php
+│  ├─ salle.inc.php
+│  ├─ structure.inc.php
+│  └─ utilisateur.inc.php
+├─ README.md
+├─ reservations.xml
+├─ todo
+└─ vue
+   ├─ css
+   │  ├─ connexion.css
+   │  ├─ creer_reservation.css
+   │  ├─ reservation.css
+   │  ├─ root.css
+   │  ├─ salle.css
+   │  ├─ valide_reservation.css
+   │  └─ variable.css
+   ├─ entete.php
+   ├─ vueConnexion.php
+   ├─ vueCreerCompte.php
+   ├─ vueCreerReservation.php
+   ├─ vueReservation.php
+   ├─ vueSalle.php
+   ├─ vueSupprimerReservation.php
+   ├─ vueValideReservation.php
+   └─ vueXML.php
+```
